@@ -782,9 +782,122 @@ h2{font-size:clamp(1.85rem,3.2vw,2.75rem)!important;line-height:1.08!important}
   .section{padding:3rem 4% 4rem}
 }
 
+/* ── CAREER TIMELINE SIDEBAR ── */
+.tl-sidebar{
+  position:fixed;left:1.6rem;top:50%;transform:translateY(-50%);
+  z-index:120;pointer-events:none;
+  opacity:0;transition:opacity .4s ease;
+}
+.tl-sidebar.tl-visible{opacity:1}
+.tl-track-wrap{
+  position:absolute;left:0;top:0;width:1px;height:100%;
+  pointer-events:none;
+}
+.tl-track-bg{
+  position:absolute;top:0;left:0;right:0;bottom:0;
+  background:var(--rule);
+}
+.tl-track-fill{
+  position:absolute;top:0;left:0;right:0;height:0%;
+  background:var(--burgundy);transition:height .5s cubic-bezier(.4,0,.2,1);
+}
+.tl-items{
+  display:flex;flex-direction:column;pointer-events:all;position:relative;
+}
+.tl-item{
+  display:flex;align-items:center;gap:.55rem;
+  padding:.85rem 0;cursor:pointer;text-decoration:none;
+  position:relative;
+}
+.tl-dot{
+  width:7px;height:7px;border-radius:50%;flex-shrink:0;
+  border:1.5px solid rgba(224,221,216,.8);background:var(--bg);
+  transition:all .3s ease;position:relative;z-index:2;
+  margin-left:-3px;
+}
+.tl-item.tl-active .tl-dot{
+  width:10px;height:10px;margin-left:-4.5px;
+  border-color:var(--burgundy);background:var(--burgundy);
+  box-shadow:0 0 0 4px rgba(122,31,46,.12);
+}
+.tl-item:hover .tl-dot{border-color:var(--burgundy)}
+.tl-label{
+  overflow:hidden;max-width:0;opacity:0;white-space:nowrap;
+  transition:max-width .35s cubic-bezier(.4,0,.2,1),opacity .25s ease;
+  padding-left:.1rem;
+}
+.tl-item.tl-active .tl-label,
+.tl-item:hover .tl-label{max-width:180px;opacity:1}
+.tl-yr{
+  display:block;font-size:.48rem;letter-spacing:.15em;
+  text-transform:uppercase;color:var(--burgundy);line-height:1.2;
+}
+.tl-role{
+  display:block;font-size:.64rem;font-weight:500;
+  color:var(--noir);line-height:1.3;
+}
+.tl-co{
+  display:block;font-size:.57rem;color:var(--slate);line-height:1.2;
+}
+@media(max-width:1080px){.tl-sidebar{display:none}}
+
+/* eco photo carousel */
+.eco-pc{position:relative;border-radius:6px;overflow:hidden;background:#0e1a10}
+.eco-pc-track{position:relative;height:480px}
+.eco-pc-slide{position:absolute;inset:0;opacity:0;transition:opacity .5s ease}
+.eco-pc-slide.eco-pc-active{opacity:1}
+.eco-pc-slide img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block}
+.eco-pc-caption{position:absolute;bottom:2.8rem;left:0;right:0;padding:.65rem 1.1rem;font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.7);line-height:1;pointer-events:none}
+.eco-pc-dots{position:absolute;bottom:.9rem;left:50%;transform:translateX(-50%);display:flex;gap:.55rem}
+.eco-pc-dot{width:7px;height:7px;border-radius:50%;border:none;background:rgba(255,255,255,.3);cursor:pointer;padding:0;transition:background .25s}
+.eco-pc-dot.eco-pc-dot-active{background:#fff}
+.eco-pc-dot:hover{background:rgba(255,255,255,.7)}
+
 </style>
 </head>
 <body>
+
+<!-- CAREER TIMELINE SIDEBAR -->
+<aside class="tl-sidebar" aria-label="Career timeline navigation">
+  <div class="tl-items">
+    <div class="tl-track-wrap" id="tl-track-wrap">
+      <div class="tl-track-bg"></div>
+      <div class="tl-track-fill" id="tl-track-fill"></div>
+    </div>
+    <a class="tl-item tl-active" href="#cxg" data-section="cxg">
+      <div class="tl-dot"></div>
+      <div class="tl-label">
+        <span class="tl-yr">2020–2022</span>
+        <span class="tl-role">Business Transformation</span>
+        <span class="tl-co">CXG</span>
+      </div>
+    </a>
+    <a class="tl-item" href="#ge" data-section="ge">
+      <div class="tl-dot"></div>
+      <div class="tl-label">
+        <span class="tl-yr">2023–2025</span>
+        <span class="tl-role">Head of Growth</span>
+        <span class="tl-co">CXG</span>
+      </div>
+    </a>
+    <a class="tl-item" href="#eco" data-section="eco">
+      <div class="tl-dot"></div>
+      <div class="tl-label">
+        <span class="tl-yr">2024–2025</span>
+        <span class="tl-role">Founder</span>
+        <span class="tl-co">EcoConnect</span>
+      </div>
+    </a>
+    <a class="tl-item" href="#aud" data-section="aud">
+      <div class="tl-dot"></div>
+      <div class="tl-label">
+        <span class="tl-yr">2026</span>
+        <span class="tl-role">Founder</span>
+        <span class="tl-co">Audacity</span>
+      </div>
+    </a>
+  </div>
+</aside>
 
 <nav>
   <a class="nav-name" href="#">Alexandra <em>Kan</em></a>
@@ -842,61 +955,33 @@ h2{font-size:clamp(1.85rem,3.2vw,2.75rem)!important;line-height:1.08!important}
   <div class="scroll-cue">Scroll ↓</div>
 </section>
 
-<!-- ABOUT -->
-<section style="padding:4rem 2rem 4.5rem;border-bottom:1px solid var(--rule)">
-  <div style="max-width:900px;margin:0 auto;display:grid;grid-template-columns:1.2fr 1.8fr;gap:2rem;align-items:start">
-    <div>
-      <div style="font-size:.58rem;letter-spacing:.22em;text-transform:uppercase;color:var(--burgundy);margin-bottom:.9rem;display:flex;align-items:center;gap:.5rem"><span style="display:block;width:1.1rem;height:1px;background:var(--burgundy)"></span>About</div>
-      <div style="font-size:.82rem;color:var(--slate);line-height:1.7">Paris · Available now</div>
-      <div style="margin-top:1.2rem;display:flex;flex-direction:column;gap:.5rem">
-        <a href="https://www.linkedin.com/in/kan-alexandra/" target="_blank" style="font-size:.62rem;letter-spacing:.13em;text-transform:uppercase;color:var(--noir);text-decoration:none;border-bottom:1px solid var(--noir);padding-bottom:.1rem;width:fit-content;transition:color .2s,border-color .2s">LinkedIn ↗</a>
-        <a href="mailto:kan.alexandra@gmail.com" style="font-size:.62rem;letter-spacing:.13em;text-transform:uppercase;color:var(--noir);text-decoration:none;border-bottom:1px solid var(--noir);padding-bottom:.1rem;width:fit-content;transition:color .2s,border-color .2s">Get in touch ↗</a>
-      </div>
-    </div>
-    <div>
-      <p style="font-size:1.05rem;color:var(--graphite);line-height:1.85;margin-bottom:1.4rem">The most expensive growth mistakes aren't bad campaigns, they're product leaks being treated as acquisition problems. You can't lifecycle your way out of an 80-question form.</p>
-      <p style="font-size:.92rem;color:var(--graphite);line-height:1.88;margin-bottom:1.4rem">A decade building and running the consumer side of a CX intelligence platform across 90 countries. I laid the operational foundation, built the growth function from zero, and drove 5x registration growth in three years. When the product fix I'd been pushing for didn't arrive, I built the platform myself.</p>
-      <p style="font-size:.92rem;color:var(--graphite);line-height:1.88;margin-bottom:1.6rem">Looking for a mandate where I own the consumer journey end-to-end: growth and product together.</p>
-      <div style="padding-top:1.2rem;border-top:1px solid var(--rule);display:flex;gap:1.8rem;flex-wrap:wrap">
-        <div style="font-size:.58rem;letter-spacing:.22em;text-transform:uppercase;color:var(--slate)">ESSEC & Mannheim Business School EMBA</div>
-        <div style="font-size:.58rem;letter-spacing:.22em;text-transform:uppercase;color:var(--slate)">North America · Europe · MENA · APAC </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- TESTIMONIAL -->
-<section style="padding:3rem 2rem;border-bottom:1px solid var(--rule);background:var(--chalk)">
-  <div style="max-width:900px;margin:0 auto;display:grid;grid-template-columns:1fr 3fr;gap:4rem;align-items:start">
-    <div>
-      <div style="font-size:.58rem;letter-spacing:.22em;text-transform:uppercase;color:var(--burgundy);display:flex;align-items:center;gap:.5rem"><span style="display:block;width:1.1rem;height:1px;background:var(--burgundy)"></span>Reference</div>
-    </div>
-    <div>
-      <p style="font-family:'Playfair Display',serif;font-style:italic;font-size:1.15rem;color:var(--graphite);line-height:1.7;margin-bottom:1.1rem">"In the years working together, Alexandra built a department from the ground up, launched new tools, processes and so much more. Not about quick fixes, but about finding the root cause of anything coming her way, she is an avid learner who has always challenged the status quo and taken matters into her own hands."</p>
-      <div style="font-size:.72rem;color:var(--slate);letter-spacing:.04em">Marine Debatte K. · EVP Community Engagement, CXG · Line Manager 2021–2026</div>
-    </div>
-  </div>
-</section>
-
-<!-- BEYOND WORK -->
-<section style="padding:5rem 4% 5.5rem;border-bottom:1px solid var(--rule);background:var(--chalk)">
+<!-- ALEXANDRA -->
+<section style="padding:5rem 4% 6rem;border-bottom:1px solid var(--rule)">
   <div style="max-width:900px;margin:0 auto">
-    <div style="font-size:.58rem;letter-spacing:.22em;text-transform:uppercase;color:var(--burgundy);margin-bottom:3rem;display:flex;align-items:center;gap:.5rem"><span style="display:block;width:1.1rem;height:1px;background:var(--burgundy)"></span>Beyond work</div>
+    <div style="font-size:.58rem;letter-spacing:.22em;text-transform:uppercase;color:var(--burgundy);margin-bottom:3rem;display:flex;align-items:center;gap:.5rem"><span style="display:block;width:1.1rem;height:1px;background:var(--burgundy)"></span>Alexandra Kan</div>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start">
       <div>
-        <p style="font-size:.95rem;color:var(--graphite);line-height:1.9;margin-bottom:1.1rem">Born in Novosibirsk, Siberia. Studied in South Africa, France, Germany, worked in the US and Taiwan, built a career across the Gulf, and landed in Paris, where I'm now building what comes next. Fifteen years across luxury, data, and consumer platforms left me with one conviction: the best growth work happens when you're close enough to the product to feel where it breaks.</p>
-        <p style="font-size:.95rem;color:var(--graphite);line-height:1.9;margin-bottom:0">Outside of work I fundraise for Courage, a foundation supporting chronically ill children in Heidelberg, Germany, and for Women on a Mission (WOAM), a non-profit organisation now headquartered in France. WOAM raises awareness and funds for women survivors of war, violence and abuse through challenging expeditions and campaigns.</p>
-        <p style="font-size:.95rem;color:var(--graphite);line-height:1.9;margin-bottom:0">I’m drawn to places that require more than you think you have. Occasionally, I climb mountains for the same reason. The latest summit: Chimborazo, Ecuador. I find it useful to regularly do things that are harder than they need to be.</p>
-</div>
-
+        <p style="font-family:'Playfair Display',serif;font-style:italic;font-size:1.12rem;color:var(--graphite);line-height:1.75;margin-bottom:1.5rem">The most expensive growth mistakes aren't bad campaigns, they're product leaks being treated as acquisition problems. You can't lifecycle your way out of an 80-question form.</p>
+        <p style="font-size:.95rem;color:var(--graphite);line-height:1.9;margin-bottom:1.1rem">Born in Novosibirsk, Siberia. Studied in South Africa, France, Germany — worked in the US and Taiwan, built a career across the Gulf, and landed in Paris. Fifteen years across luxury, data, and consumer platforms left me with one conviction: the best growth work happens when you're close enough to the product to feel where it breaks.</p>
+        <p style="font-size:.95rem;color:var(--graphite);line-height:1.9;margin-bottom:1.8rem">Outside work I fundraise for Courage, a foundation supporting chronically ill children, and Women on a Mission — raising awareness for women survivors of war and violence through expedition campaigns. The latest: Chimborazo, Ecuador. I find it useful to regularly do things that are harder than they need to be.</p>
+        <div style="padding-top:1.2rem;border-top:1px solid var(--rule);margin-bottom:1.2rem;display:flex;gap:1.8rem;flex-wrap:wrap">
+          <div style="font-size:.58rem;letter-spacing:.22em;text-transform:uppercase;color:var(--slate)">ESSEC & Mannheim Business School EMBA</div>
+          <div style="font-size:.58rem;letter-spacing:.22em;text-transform:uppercase;color:var(--slate)">North America · Europe · MENA · APAC</div>
+        </div>
+        <div style="font-size:.8rem;color:var(--slate);margin-bottom:.9rem">Paris · Available now</div>
+        <div style="display:flex;gap:1.4rem;flex-wrap:wrap">
+          <a href="https://www.linkedin.com/in/kan-alexandra/" target="_blank" style="font-size:.62rem;letter-spacing:.13em;text-transform:uppercase;color:var(--noir);text-decoration:none;border-bottom:1px solid var(--noir);padding-bottom:.1rem;transition:color .2s,border-color .2s">LinkedIn ↗</a>
+          <a href="mailto:kan.alexandra@gmail.com" style="font-size:.62rem;letter-spacing:.13em;text-transform:uppercase;color:var(--noir);text-decoration:none;border-bottom:1px solid var(--noir);padding-bottom:.1rem;transition:color .2s,border-color .2s">Get in touch ↗</a>
+        </div>
+      </div>
       <div class="about-gallery">
         <button class="about-gallery-item about-gallery-item--stage" type="button" data-about-image data-full="https://alexandra-kan.github.io/img/img_1.png" data-caption="On stage · regional keynote" aria-label="Open image: On stage · regional keynote">
           <img src="https://alexandra-kan.github.io/img/img_1.png" alt="On stage · regional keynote" loading="lazy" decoding="async">
           <span class="about-gallery-tag">On stage</span>
         </button>
-        <button class="about-gallery-item about-gallery-item--award" type="button" data-about-image data-full="https://alexandra-kan.github.io/img/img_2.png" data-caption="MITdesignX award · Dubai" aria-label="Open image: MITdesignX award · Dubai">
-          <img src="https://alexandra-kan.github.io/img/img_2.png" alt="MITdesignX award · Dubai" loading="lazy" decoding="async">
-          <span class="about-gallery-tag">MITdesignX award</span>
+        <button class="about-gallery-item about-gallery-item--award" type="button" data-about-image data-full="https://alexandra-kan.github.io/img/img_2.png" data-caption="MIT design award · Dubai" aria-label="Open image: MIT design award · Dubai">
+          <img src="https://alexandra-kan.github.io/img/img_2.png" alt="MIT design award · Dubai" loading="lazy" decoding="async">
+          <span class="about-gallery-tag">MIT design award</span>
         </button>
         <button class="about-gallery-item about-gallery-item--tall about-gallery-item--chimborazo" type="button" data-about-image data-full="https://alexandra-kan.github.io/img/img_3.png" data-caption="Chimborazo · expedition conditions" aria-label="Open image: Chimborazo · expedition conditions">
           <img src="https://alexandra-kan.github.io/img/img_3.png" alt="Chimborazo · expedition conditions" loading="lazy" decoding="async">
@@ -912,16 +997,38 @@ h2{font-size:clamp(1.85rem,3.2vw,2.75rem)!important;line-height:1.08!important}
 </section>
 
 <div class="work-div">
-  <span class="wd-text">Selected work</span>
+  <span class="wd-text">CXG</span>
   <span class="wd-line"></span>
-  <span class="wd-count">Four pieces</span>
+  <span class="wd-count">2020&ndash;2025</span>
 </div>
 
-<!-- 01 GROWTH ENGINE -->
+<!-- 01 BUSINESS TRANSFORMATION -->
+<section class="section" id="cxg">
+  <div class="si">
+    <div class="s-head"><div><div class="s-ey"><span class="s-idx">01 /</span> 2020–2022 · CXG · BUSINESS TRANSFORMATION</div><h2>Business Transformation - <em>the operating model behind later growth</em></h2></div></div>
+    <div class="bi">
+
+        <div class="bi-top"><div class="bi-tit">Global Commercial Intelligence · Forecast View · FY 2026</div><div class="bi-fs"><span class="bi-f on">All</span><span class="bi-f">Europe</span><span class="bi-f">MENA</span><span class="bi-f">APAC</span></div></div>
+        <div class="bi-body">
+          <div class="bi-kpis"><div class="bi-kpi"><div class="bi-kn">$4.2M</div><div class="bi-kl">Revenue YTD</div><div class="bi-kd bup">▲ +10.5% vs budget</div></div><div class="bi-kpi"><div class="bi-kn">$18.6M</div><div class="bi-kl">12M Forecast</div><div class="bi-kd bnu">23 opportunities</div></div><div class="bi-kpi"><div class="bi-kn">$8.4M</div><div class="bi-kl">Active Pipeline</div><div class="bi-kd bup">▲ +31% vs Q4</div></div><div class="bi-kpi"><div class="bi-kn">94%</div><div class="bi-kl">Delivery Rate</div><div class="bi-kd bup">SLA: 90%</div></div></div>
+          <div class="bi-charts">
+            <div class="bi-card"><div class="bi-ct">Revenue , Actual vs Budget vs Forecast ($K)</div><div class="rev-chart"><div class="rbg"><div class="rb a" style="height:58px"></div><div class="rb b" style="height:52px"></div></div><div class="rbg"><div class="rb a" style="height:68px"></div><div class="rb b" style="height:62px"></div></div><div class="rbg"><div class="rb a" style="height:72px"></div><div class="rb b" style="height:70px"></div></div><div class="rbg"><div class="rb a" style="height:80px"></div><div class="rb b" style="height:74px"></div></div><div class="rbg" style="opacity:.88"><div class="rb f" style="height:85px"></div><div class="rb b" style="height:78px"></div></div><div class="rbg" style="opacity:.72"><div class="rb p" style="height:90px"></div><div class="rb b" style="height:82px"></div></div><div class="rbg" style="opacity:.58"><div class="rb p" style="height:88px"></div><div class="rb b" style="height:85px"></div></div><div class="rbg" style="opacity:.46"><div class="rb p" style="height:93px"></div><div class="rb b" style="height:88px"></div></div></div><div class="rl"><div class="rlg">Q1'25</div><div class="rlg">Q2'25</div><div class="rlg">Q3'25</div><div class="rlg">Q4'25</div><div class="rlg">Q1'26</div><div class="rlg">Q2'26F</div><div class="rlg">Q3'26F</div><div class="rlg">Q4'26F</div></div><div class="rleg"><div class="rli"><div class="rld" style="background:var(--cxg)"></div>Actual</div><div class="rli"><div class="rld" style="background:var(--cxg-tl)"></div>Budget</div><div class="rli"><div class="rld" style="background:var(--cxg-or)"></div>Forecast</div><div class="rli"><div class="rld" style="background:var(--cxg-sd);border:1px dashed var(--cxg-or)"></div>Projected</div></div></div>
+            <div class="bi-card"><div class="bi-ct">Pipeline by Stage ($M)</div><div class="pipe"><div class="pr"><span class="ps">Qualified</span><div class="pbw"><div class="pb" style="width:100%;background:var(--cxg)"><span class="pv">$12.1M · 38</span></div></div><span class="pc">38</span></div><div class="pr"><span class="ps">Proposal</span><div class="pbw"><div class="pb" style="width:64%;background:var(--cxg-sg)"><span class="pv">$7.8M · 19</span></div></div><span class="pc">19</span></div><div class="pr"><span class="ps">Negotiation</span><div class="pbw"><div class="pb" style="width:26%;background:var(--cxg-or)"><span class="pv">$3.2M</span></div></div><span class="pc">8</span></div><div class="pr"><span class="ps">Verbal Win</span><div class="pbw"><div class="pb" style="width:15%;background:var(--cxg-tl)"><span class="pv" style="color:var(--cxg)">$1.8M</span></div></div><span class="pc">4</span></div></div><div style="margin-top:.65rem;padding-top:.55rem;border-top:1px solid var(--rule)"><div style="font-size:.5rem;letter-spacing:.08em;text-transform:uppercase;color:var(--slate);margin-bottom:.38rem">Capacity vs Demand</div><div class="cap-rows"><div class="cr"><span class="crla">Europe</span><div class="crtr"><div class="crfi" style="width:82%;background:var(--cxg)"></div></div><span class="crpct">82%</span></div><div class="cr"><span class="crla">MENA</span><div class="crtr"><div class="crfi" style="width:95%;background:var(--cxg-rd)"></div></div><span class="crpct" style="color:var(--cxg-rd)">95%⚠</span></div><div class="cr"><span class="crla">APAC</span><div class="crtr"><div class="crfi" style="width:67%;background:var(--cxg-sg)"></div></div><span class="crpct">67%</span></div><div class="cr"><span class="crla">Americas</span><div class="crtr"><div class="crfi" style="width:54%;background:var(--cxg-tl)"></div></div><span class="crpct">54%</span></div></div></div></div>
+          </div>
+          <div class="bi-card"><div class="bi-ct">Regional Variance , Q1 2026 Actual vs Budget</div><table class="var-t"><thead><tr><th>Region</th><th>Budget</th><th>Actual</th><th>Variance</th><th>YoY</th><th>Missions</th><th>Avg Score</th></tr></thead><tbody><tr><td>Europe</td><td>$1,200K</td><td>$1,350K</td><td class="vp">+12.5%</td><td class="vp">+8%</td><td>8,420</td><td>8.2</td></tr><tr><td>MENA</td><td>$680K</td><td>$590K</td><td class="vn">–13.2%</td><td class="vp">+15%</td><td>4,100</td><td>7.5</td></tr><tr><td>APAC</td><td>$520K</td><td>$611K</td><td class="vp">+17.5%</td><td class="vp">+22%</td><td>3,890</td><td>7.9</td></tr><tr><td>Americas</td><td>$310K</td><td>$298K</td><td class="vn">–3.9%</td><td class="vp">+5%</td><td>1,840</td><td>7.7</td></tr><tr style="font-weight:500"><td>Total</td><td>$2,710K</td><td>$2,849K</td><td class="vp">+5.1%</td><td class="vp">+11%</td><td>18,250</td><td>7.9</td></tr></tbody></table></div>
+                <p class="cxg-note" style="margin-top:1.5rem">Data is proprietary. Figures are illustrative; the forecast architecture, operating logic, and dashboard structure are real.</p>
+</div>
+    </div>
+    <div style="max-width:720px;margin:2.5rem auto 0">
+      <p style="font-size:.95rem;color:var(--graphite);line-height:1.88">No CRM, no ERP, no resource-planning layer — commercial visibility lived across hundreds of isolated Excel files across 11 business units. Built the company's first live Power BI financial forecast: pipeline, delivery demand, and capacity constraints visible in real time for the first time. That infrastructure became the foundation on which the growth function was later built.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 02 GROWTH ENGINE -->
 <section class="section" id="ge" style="border-bottom:none">
   <div class="si">
-    <div class="s-head"><div><div class="s-ey"><span class="s-idx">01 /</span> 2023–2025 · CXG · GROWTH ENGINE</div><h2>Global Growth - <em>95K network,<br>55K added in 3 years</em></h2></div></div>
-    <p class="ge-intro">This didn't start with a growth brief. It started with two years building the operational foundation: forecast infrastructure, platform re-architecture, onboarding diagnosis. By 2023 the infrastructure existed and the funnel was measurable. Then came the mandate to grow.</p>
+    <div class="s-head"><div><div class="s-ey"><span class="s-idx">02 /</span> 2023–2025 · CXG · GROWTH ENGINE</div><h2>Global Growth - <em>95K network,<br>55K added in 3 years</em></h2></div></div>
     <div class="ge-kpi-strip">
       <div class="ge-kpi">
         <div class="ge-kpi-n">46%</div>
@@ -945,14 +1052,7 @@ h2{font-size:clamp(1.85rem,3.2vw,2.75rem)!important;line-height:1.08!important}
       </div>
     </div>
     <div style="max-width:720px;margin-bottom:3.5rem;margin-left:auto;margin-right:auto">
-        <p class="proj-body" style="font-size:.92rem;color:var(--graphite);line-height:1.88;margin-bottom:1.1rem">There was no team, no playbook, no CRM, and no data. So I started building: paid, referral, community, affiliations, influencers - whatever had a chance of sticking. Volume first, learning second.</p>
-        <p class="proj-body" style="font-size:.92rem;color:var(--graphite);line-height:1.88;margin-bottom:1.1rem">By year two the data was in. I could see which channels converted, reallocate the budget and optimize ROI. The growth engine was becoming repeatable. But one thing didn’t move no matter how we adjusted the mix. The funnel data showed the conversion problem wasn’t an acquisition problem - it was the drop-off at onboarding. Every channel, same wall. An 80-question registration form was the primary leak. We were asking consumers for full commitment before any value was delivered. Before they had any reason to trust us. I built the case for progressive profiling and a conversational AI layer, mapped the drop-off to specific form steps, and handed the redesign to Product.</p>
-        <p class="proj-body" style="font-size:.92rem;color:var(--graphite);line-height:1.88;margin-bottom:1.1rem">By year three: 5 direct reports, a regional matrix of 8 across 11 markets, HubSpot standing up the full consumer lifecycle, a €300K budget reallocated quarterly toward highest-ROI channels, and Power BI dashboards giving leadership their first real-time view of acquisition, retention, and market performance. 2025 was the biggest year on record - 30K users added, with the onboarding still broken.</p>
-        <p class="proj-body" style="font-size:.92rem;color:var(--graphite);line-height:1.88;margin-bottom:1.1rem">The redesign never shipped. So I left and built it myself.</p>
-        <p class="proj-body" style="font-size:.92rem;color:var(--graphite);line-height:1.88;margin-bottom:0">Which is why for my next step, I want to own the product, not just the brief.</p>
-    </div>
-    <div style="margin-bottom:.75rem">
-      <div style="font-size:.58rem;letter-spacing:.18em;text-transform:uppercase;color:var(--slate);margin-bottom:1rem;display:flex;align-items:center;gap:.6rem"><span style="display:block;width:1.1rem;height:1px;background:var(--rule)"></span>What the intelligence work looked like</div>
+      <p style="font-size:.95rem;color:var(--graphite);line-height:1.88">No team, no playbook, no CRM. Built the function from scratch and drove 5x registration growth in three years — 55K consumers added against a base of 40K built over the prior 17 years. The conversion breakthrough came through product: diagnosing the onboarding drop-off and driving a trust-first redesign that lifted lead-to-profile conversion from 27% to 46%.</p>
     </div>
     <div>
         <div class="carousel">
@@ -1136,23 +1236,91 @@ h2{font-size:clamp(1.85rem,3.2vw,2.75rem)!important;line-height:1.08!important}
   </div>
 </section>
 
-<!-- 02 AUDACITY -->
-<section class="section" id="aud">
+<!-- REFERENCE -->
+<section style="padding:3.5rem 4%;border-bottom:1px solid var(--rule);background:var(--chalk)">
+  <div style="max-width:900px;margin:0 auto;display:grid;grid-template-columns:1fr 3fr;gap:4rem;align-items:start">
+    <div>
+      <div style="font-size:.58rem;letter-spacing:.22em;text-transform:uppercase;color:var(--burgundy);display:flex;align-items:center;gap:.5rem"><span style="display:block;width:1.1rem;height:1px;background:var(--burgundy)"></span>Reference</div>
+    </div>
+    <div>
+      <p style="font-family:'Playfair Display',serif;font-style:italic;font-size:1.15rem;color:var(--graphite);line-height:1.7;margin-bottom:1.1rem">"In the years working together, Alexandra built a department from the ground up, launched new tools, processes and so much more. Not about quick fixes, but about finding the root cause of anything coming her way, she is an avid learner who has always challenged the status quo and taken matters into her own hands."</p>
+      <div style="font-size:.72rem;color:var(--slate);letter-spacing:.04em">Marine Debatte K. · EVP Community Engagement, CXG · Line Manager 2021–2026</div>
+    </div>
+  </div>
+</section>
+
+<div class="work-div">
+  <span class="wd-text">Independent ventures</span>
+  <span class="wd-line"></span>
+  <span class="wd-count">2024&ndash;2026</span>
+</div>
+
+<!-- 03 ECOCONNECT -->
+<section class="section" id="eco" style="background-color:rgb(248,247,245)">
   <div class="si">
-    <div class="s-head"><div><div class="s-ey"><span class="s-idx">02 /</span> 2026 · Founder &amp; Builder</div><h2>Audacity - <em>luxury mystery<br>shopping, rethought</em></h2></div></div>
-    <div style="max-width:720px;margin:0 auto 3rem">
-      <div class="proj-body">
-        <p>The EVX framework that emerged from three years at CXG pointed to an obvious gap: the consumer experience in mystery shopping was broken. Long forms, opaque processes, no feedback loop, payment that arrived weeks late, the people the whole model depended on were being treated as a resource to extract from, not a community to build. If you want high-quality consumers, you have to earn their trust before you ask for anything. You earn it through the experience, not the promise.</p>
-        <p>Audacity is that platform. Built around the consumer journey first: clean onboarding, matched missions, validated reporting, fast payment. The UX is the trust mechanism: frictionless enough that the right people never have a reason to hesitate. The UX is the trust mechanism: frictionless enough that the right people never have a reason to hesitate. The brand insight follows naturally when the consumer experience is right. That’s the thesis, and it’s the same one I’ve been arguing since the 80-question form.</p>
-        <p>I’d been making this case inside a large organisation for two years. When it didn’t move fast enough, I built the first working version myself in two weeks: 16 live endpoints, three interfaces, a deployed platform. The build taught me more about the product than any specification process would have.</p>
-        <div class="meta-row">
-          <div class="meta-item"><div class="meta-l">Stack</div><div class="meta-v">Node.js · n8n · Notion API · Brevo · PM2</div></div>
+    <div class="s-head"><div><div class="s-ey"><span class="s-idx">03 /</span> 2024–2025 · Founder, Strategy</div><h2 style="color:rgb(42,107,60)">EcoConnect - <em style="color:var(--eco-lt)">ethical sourcing<br>infrastructure concept</em></h2></div></div>
+    <!-- ECO PHOTO CAROUSEL -->
+    <div class="eco-pc" style="margin-bottom:2.5rem">
+      <div class="eco-pc-track">
+        <div class="eco-pc-slide eco-pc-active" data-caption="On stage &middot; Dubai 2025">
+          <img src="img/eco-pitch.png" alt="Alexandra Kan pitching EcoConnect at MITdesignX Demo Day, Dubai 2025" loading="lazy" decoding="async">
+        </div>
+        <div class="eco-pc-slide" data-caption="The pitch &middot; Dubai 2025">
+          <img src="img/eco-pitch2.png" alt="Alexandra Kan presenting at MITdesignX Demo Day, Dubai 2025" loading="lazy" decoding="async">
+        </div>
+        <div class="eco-pc-slide" data-caption="MITdesignX Demo Day &middot; winner">
+          <img src="https://alexandra-kan.github.io/img/img_2.png" alt="MITdesignX Demo Day award, Dubai 2025" loading="lazy" decoding="async">
         </div>
       </div>
+      <div class="eco-pc-caption"></div>
+      <div class="eco-pc-dots">
+        <button class="eco-pc-dot eco-pc-dot-active" data-idx="0" aria-label="Photo 1"></button>
+        <button class="eco-pc-dot" data-idx="1" aria-label="Photo 2"></button>
+        <button class="eco-pc-dot" data-idx="2" aria-label="Photo 3"></button>
+      </div>
     </div>
-    <div style="margin-bottom:.75rem">
-      <div style="font-size:.58rem;letter-spacing:.18em;text-transform:uppercase;color:var(--slate);margin-bottom:1rem;display:flex;align-items:center;gap:.6rem"><span style="display:block;width:1.1rem;height:1px;background:var(--rule)"></span>What the platform looks like</div>
+    <!-- ECO TEXT BELOW -->
+    <div class="eco-bottom">
+      <div class="eco-copy">
+  <p>Brands knew how their sales associates performed at point of sale but had almost no visibility upstream — certifications lived in PDFs and supplier problems surfaced the same way the public found out.</p>
+  <p>Built to close that gap: supplier discovery, certification verification, RFP workflows, and contract tracking in one stack, with a verified base of 4,186 supplier profiles.</p>
+  <p>The same trust problem I had been solving on the consumer side, applied to the supply side.</p>
+</div>
+<div class="eco-right">
+        <div class="eco-award">
+          <div class="eco-award-top">
+            <div class="eco-emblem">
+              <img class="eco-mit-logo" src="https://designx.mit.edu/wp-content/uploads/2022/02/WordpressSocialLinkSEO.png" alt="MITdesignX logo">
+            </div>
+            <div class="eco-award-copy">
+              <div class="eco-award-label">Recognition</div>
+              <div class="eco-award-name">MITdesignX Demo Day Winner</div>
+              <div class="eco-award-year">Dubai · 2025</div>
+            </div>
+          </div>
+          <p class="eco-award-desc">Beat ventures with $1M+ in government contracts. Bootstrapped, built during a full-time executive role and an ESSEC EMBA with Mannheim dual degree. No dedicated time. No external funding.</p>
+        </div>
+        <div class="eco-facts">
+          <div class="eco-fact">
+            <span class="eco-fact-n">4,186</span>
+            <span class="eco-fact-l">certified suppliers at launch</span>
+          </div>
+          <div class="eco-fact">
+            <span class="eco-fact-n">3</span>
+            <span class="eco-fact-l">person team across three continents</span>
+          </div>
+        </div>
+        <div class="eco-mi"><div class="eco-ml">Stack</div><div class="eco-mv">Node.js · React · PostgreSQL · AWS · Elasticsearch</div></div>
+        <div class="eco-mi"><div class="eco-ml">Status</div><div class="eco-mv">Paused 2025. Frontend refreshed 2026. IP retained.</div></div>
+      </div>
     </div>
+  </div>
+</section>
+
+<!-- 04 AUDACITY -->
+<section class="section" id="aud">
+  <div class="si">
+    <div class="s-head"><div><div class="s-ey"><span class="s-idx">04 /</span> 2026 · Founder &amp; Builder</div><h2>Audacity - <em>luxury mystery<br>shopping, rethought</em></h2></div></div>
     <div>
               <div class="carousel">
           <div class="c-bar"><div class="cdot"></div><div class="cdot"></div><div class="cdot"></div><div class="curl" id="a-url">Consumer Registration</div></div>
@@ -1250,234 +1418,11 @@ h2{font-size:clamp(1.85rem,3.2vw,2.75rem)!important;line-height:1.08!important}
           <div style="display:flex;gap:.5rem;flex-wrap:wrap"><span class="tag live">● Live</span><span class="tag">Stages 1–5 validated</span><span class="tag">Stage 6 in test</span></div>
           <a class="proj-link" href="https://alexandra-kan.github.io/audacity/" target="_blank" style="margin-top:0;white-space:nowrap">View platform site</a>
         </div>
+        <div style="max-width:720px;margin:2.5rem auto 0">
+          <p style="font-size:.95rem;color:var(--graphite);line-height:1.88">Clean onboarding, matched missions, validated reporting, fast payment — trust through the experience, not the promise. Three years on the inside gave me everything I needed: what the product had to do, where the market was leaving value behind. Built the first working version in two weeks: 16 live endpoints, three interfaces, a deployed platform.</p>
+        </div>
 
     </div>      </div>
-    </div>
-  </div>
-</section>
-
-<!-- 03 BUSINESS TRANSFORMATION -->
-<section class="section" id="cxg">
-  <div class="si">
-    <div class="s-head"><div><div class="s-ey"><span class="s-idx">03 /</span> 2020–2022 · CXG · BUSINESS TRANSFORMATION</div><h2>Business Transformation - <em>the operating model behind later growth</em></h2></div></div>
-    <div style="max-width:720px;margin:0 auto 3rem;font-size:.9rem;color:var(--graphite);line-height:1.88">
-
-        <p>Before I could scale growth, leadership first needed to know what was actually coming in the commercial pipeline. There was no CRM, no ERP, no resource-planning layer, and no real cash-flow projection. Commercial visibility lived across hundreds of isolated Excel files across 11 business units worldwide.</p>
-        <div class="hook"><p>I took those fragmented files and built the company’s first live Power BI financial forecast. For the first time, leadership could see the pipeline, expected volume, delivery demand, and where operations would break before it happened, and trust what they were seeing. They still use it today.</p></div>
-        <p>That visibility exposed the next issue: strategic markets were undersourced, but scaling growth without fixing user experience would only leak down the funnel later.</p>
-        <p>The platform was unstable and the consumer onboarding was too long, five years of user feedback said so clearly. I led the re-architecture and migration of the web portal and mobile app across 25 languages and 70K users, from brief to launch, and made the case for onboarding simplification that the data had been making for years.</p>
-        <p>The tension of shorter user flow was real and relevant: ask too much, and users never reach first value; ask too little, and you weaken KYC and open the door to bad actors. Solving that balance, just as post-COVID luxury demand outgrew our organic growth, became the foundation on which the later growth function was built.</p>
-    </div>
-    <div style="margin-bottom:.75rem">
-      <div style="font-size:.58rem;letter-spacing:.18em;text-transform:uppercase;color:var(--slate);margin-bottom:1rem;display:flex;align-items:center;gap:.6rem"><span style="display:block;width:1.1rem;height:1px;background:var(--rule)"></span>What the forecast infrastructure looked like</div>
-    </div>
-    <div class="bi">
-
-        <div class="bi-top"><div class="bi-tit">Global Commercial Intelligence · Forecast View · FY 2026</div><div class="bi-fs"><span class="bi-f on">All</span><span class="bi-f">Europe</span><span class="bi-f">MENA</span><span class="bi-f">APAC</span></div></div>
-        <div class="bi-body">
-          <div class="bi-kpis"><div class="bi-kpi"><div class="bi-kn">$4.2M</div><div class="bi-kl">Revenue YTD</div><div class="bi-kd bup">▲ +10.5% vs budget</div></div><div class="bi-kpi"><div class="bi-kn">$18.6M</div><div class="bi-kl">12M Forecast</div><div class="bi-kd bnu">23 opportunities</div></div><div class="bi-kpi"><div class="bi-kn">$8.4M</div><div class="bi-kl">Active Pipeline</div><div class="bi-kd bup">▲ +31% vs Q4</div></div><div class="bi-kpi"><div class="bi-kn">94%</div><div class="bi-kl">Delivery Rate</div><div class="bi-kd bup">SLA: 90%</div></div></div>
-          <div class="bi-charts">
-            <div class="bi-card"><div class="bi-ct">Revenue , Actual vs Budget vs Forecast ($K)</div><div class="rev-chart"><div class="rbg"><div class="rb a" style="height:58px"></div><div class="rb b" style="height:52px"></div></div><div class="rbg"><div class="rb a" style="height:68px"></div><div class="rb b" style="height:62px"></div></div><div class="rbg"><div class="rb a" style="height:72px"></div><div class="rb b" style="height:70px"></div></div><div class="rbg"><div class="rb a" style="height:80px"></div><div class="rb b" style="height:74px"></div></div><div class="rbg" style="opacity:.88"><div class="rb f" style="height:85px"></div><div class="rb b" style="height:78px"></div></div><div class="rbg" style="opacity:.72"><div class="rb p" style="height:90px"></div><div class="rb b" style="height:82px"></div></div><div class="rbg" style="opacity:.58"><div class="rb p" style="height:88px"></div><div class="rb b" style="height:85px"></div></div><div class="rbg" style="opacity:.46"><div class="rb p" style="height:93px"></div><div class="rb b" style="height:88px"></div></div></div><div class="rl"><div class="rlg">Q1'25</div><div class="rlg">Q2'25</div><div class="rlg">Q3'25</div><div class="rlg">Q4'25</div><div class="rlg">Q1'26</div><div class="rlg">Q2'26F</div><div class="rlg">Q3'26F</div><div class="rlg">Q4'26F</div></div><div class="rleg"><div class="rli"><div class="rld" style="background:var(--cxg)"></div>Actual</div><div class="rli"><div class="rld" style="background:var(--cxg-tl)"></div>Budget</div><div class="rli"><div class="rld" style="background:var(--cxg-or)"></div>Forecast</div><div class="rli"><div class="rld" style="background:var(--cxg-sd);border:1px dashed var(--cxg-or)"></div>Projected</div></div></div>
-            <div class="bi-card"><div class="bi-ct">Pipeline by Stage ($M)</div><div class="pipe"><div class="pr"><span class="ps">Qualified</span><div class="pbw"><div class="pb" style="width:100%;background:var(--cxg)"><span class="pv">$12.1M · 38</span></div></div><span class="pc">38</span></div><div class="pr"><span class="ps">Proposal</span><div class="pbw"><div class="pb" style="width:64%;background:var(--cxg-sg)"><span class="pv">$7.8M · 19</span></div></div><span class="pc">19</span></div><div class="pr"><span class="ps">Negotiation</span><div class="pbw"><div class="pb" style="width:26%;background:var(--cxg-or)"><span class="pv">$3.2M</span></div></div><span class="pc">8</span></div><div class="pr"><span class="ps">Verbal Win</span><div class="pbw"><div class="pb" style="width:15%;background:var(--cxg-tl)"><span class="pv" style="color:var(--cxg)">$1.8M</span></div></div><span class="pc">4</span></div></div><div style="margin-top:.65rem;padding-top:.55rem;border-top:1px solid var(--rule)"><div style="font-size:.5rem;letter-spacing:.08em;text-transform:uppercase;color:var(--slate);margin-bottom:.38rem">Capacity vs Demand</div><div class="cap-rows"><div class="cr"><span class="crla">Europe</span><div class="crtr"><div class="crfi" style="width:82%;background:var(--cxg)"></div></div><span class="crpct">82%</span></div><div class="cr"><span class="crla">MENA</span><div class="crtr"><div class="crfi" style="width:95%;background:var(--cxg-rd)"></div></div><span class="crpct" style="color:var(--cxg-rd)">95%⚠</span></div><div class="cr"><span class="crla">APAC</span><div class="crtr"><div class="crfi" style="width:67%;background:var(--cxg-sg)"></div></div><span class="crpct">67%</span></div><div class="cr"><span class="crla">Americas</span><div class="crtr"><div class="crfi" style="width:54%;background:var(--cxg-tl)"></div></div><span class="crpct">54%</span></div></div></div></div>
-          </div>
-          <div class="bi-card"><div class="bi-ct">Regional Variance , Q1 2026 Actual vs Budget</div><table class="var-t"><thead><tr><th>Region</th><th>Budget</th><th>Actual</th><th>Variance</th><th>YoY</th><th>Missions</th><th>Avg Score</th></tr></thead><tbody><tr><td>Europe</td><td>$1,200K</td><td>$1,350K</td><td class="vp">+12.5%</td><td class="vp">+8%</td><td>8,420</td><td>8.2</td></tr><tr><td>MENA</td><td>$680K</td><td>$590K</td><td class="vn">–13.2%</td><td class="vp">+15%</td><td>4,100</td><td>7.5</td></tr><tr><td>APAC</td><td>$520K</td><td>$611K</td><td class="vp">+17.5%</td><td class="vp">+22%</td><td>3,890</td><td>7.9</td></tr><tr><td>Americas</td><td>$310K</td><td>$298K</td><td class="vn">–3.9%</td><td class="vp">+5%</td><td>1,840</td><td>7.7</td></tr><tr style="font-weight:500"><td>Total</td><td>$2,710K</td><td>$2,849K</td><td class="vp">+5.1%</td><td class="vp">+11%</td><td>18,250</td><td>7.9</td></tr></tbody></table></div>
-                <p class="cxg-note" style="margin-top:1.5rem">Data is proprietary. Figures are illustrative; the forecast architecture, operating logic, and dashboard structure are real.</p>
-</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- 04 ECOCONNECT -->
-<section class="section" id="eco" style="background-color:rgb(248,247,245)">
-  <div class="si">
-    <div class="s-head"><div><div class="s-ey"><span class="s-idx">04 /</span> 2024–2025 · Founder, Strategy</div><h2 style="color:rgb(42,107,60)">EcoConnect - <em style="color:var(--eco-lt)">ethical fashion<br>sourcing platform</em></h2></div></div>
-    <!-- WIDE ECO CAROUSEL -->
-    <div class="carousel" style="margin-bottom:2.5rem">
-      <div class="c-bar" style="background:#1e2e22;border-bottom-color:rgba(255,255,255,.08)">
-        <div class="cdot"></div><div class="cdot"></div><div class="cdot"></div>
-        <div class="curl" id="e-url" style="background:rgba(255,255,255,.07);border-color:rgba(255,255,255,.12);color:rgba(255,255,255,.42)">app.ecoconnect-app.com</div>
-      </div>
-      <div class="c-screens eco">
-        <!-- E1: Search with left nav -->
-        <div class="c-screen active" id="es-0" style="padding:0;display:flex;flex-direction:column">
-          <div class="etop"><div class="elogo"><div class="esq"></div><div class="ebn">Eco Connect</div></div><div class="enav"><span>Home</span><span>About</span><span>Contact</span><span class="elogin">Login</span></div></div>
-          <div style="display:grid;grid-template-columns:160px 1fr;flex:1;overflow:hidden">
-            <div style="background:#f0f0f0;border-right:1px solid #e0e0e0;padding:.75rem .7rem">
-              <div style="font-size:.52rem;letter-spacing:.1em;text-transform:uppercase;color:#999;margin-bottom:.5rem">Navigation</div>
-              <div style="font-size:.65rem;font-weight:600;color:#2a6b3c;background:#e8f4e8;padding:.3rem .6rem;border-radius:4px;margin-bottom:.2rem;display:flex;align-items:center;gap:.35rem"><span>🔍</span> Find Supplier</div>
-              <div style="font-size:.63rem;color:#666;padding:.28rem .6rem;margin-bottom:.18rem;display:flex;align-items:center;gap:.35rem"><span style="opacity:.5">📊</span> Dashboard</div>
-              <div style="font-size:.63rem;color:#666;padding:.28rem .6rem;margin-bottom:.18rem;display:flex;align-items:center;gap:.35rem"><span style="opacity:.5">📋</span> Opportunities</div>
-              <div style="font-size:.63rem;color:#666;padding:.28rem .6rem;margin-bottom:.18rem;display:flex;align-items:center;gap:.35rem"><span style="opacity:.5">📄</span> Contracts</div>
-              <div style="font-size:.63rem;color:#666;padding:.28rem .6rem;margin-bottom:.18rem;display:flex;align-items:center;gap:.35rem"><span style="opacity:.5">👤</span> Account</div>
-              <div style="margin-top:.8rem;border-top:1px solid #ddd;padding-top:.6rem">
-                <div style="font-size:.52rem;letter-spacing:.1em;text-transform:uppercase;color:#999;margin-bottom:.4rem">Active Filters</div>
-                <div style="font-size:.56rem;background:#2a6b3c;color:white;padding:.15rem .45rem;border-radius:20px;display:inline-block;margin:.1rem .05rem">Apparel ✕</div>
-                <div style="font-size:.56rem;background:#2a6b3c;color:white;padding:.15rem .45rem;border-radius:20px;display:inline-block;margin:.1rem .05rem">GOTS ✕</div>
-                <div style="font-size:.56rem;background:#2a6b3c;color:white;padding:.15rem .45px;border-radius:20px;display:inline-block;margin:.1rem .05rem">Vietnam ✕</div>
-              </div>
-            </div>
-            <div style="padding:.8rem 1rem;background:white;overflow:hidden">
-              <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:.6rem">
-                <div style="font-size:.65rem;color:#555;font-weight:500">Showing 1–6 of 4,186 results</div>
-                <div style="font-size:.56rem;color:#888">Sort: Relevance ▾</div>
-              </div>
-              <div style="display:grid;grid-template-columns:1fr 1fr;gap:.45rem">
-                <div class="ecard"><div class="ecn">PureWeave Fabrics, Inc</div><div class="ecl">Argentina · Leather · Processing</div><span class="ecert">GOTS</span><span class="ecert">LWG</span><span class="ecert">Fair Trade</span></div>
-                <div class="ecard"><div class="ecn">GreenThread Textiles Co.</div><div class="ecl">Netherlands · Fabrics</div><span class="ecert">GOTS</span><span class="ecert">OEKO-TEX</span></div>
-                <div class="ecard"><div class="ecn">Conscious Cotton Collective</div><div class="ecl">Vietnam · Fabrics & Textiles</div><span class="ecert">GOTS</span></div>
-                <div class="ecard"><div class="ecn">Calicos Cotton Private Ltd</div><div class="ecl">USA · Fabrics & Textiles</div><span class="ecert">OEKO-TEX 100</span></div>
-                <div class="ecard"><div class="ecn">Guilt-Free Hides</div><div class="ecl">Argentina · Leather</div><span class="ecert">LWG</span><span class="ecert">Cradle-to-Cradle</span></div>
-                <div class="ecard"><div class="ecn">Corn. van Dijk BV</div><div class="ecl">Netherlands · Fabrics</div><span class="ecert">GOTS</span><span class="ecert">OEKO-TEX</span></div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- E2: Dashboard with left nav + reporting -->
-        <div class="c-screen" id="es-1" style="padding:0;display:flex;flex-direction:column">
-          <div class="etop"><div class="elogo"><div class="esq"></div><div class="ebn">Eco Connect</div></div><div style="font-size:.58rem;color:rgba(255,255,255,.4)">Dashboard</div></div>
-          <div style="display:grid;grid-template-columns:160px 1fr;flex:1;overflow:hidden">
-            <div style="background:#f0f0f0;border-right:1px solid #e0e0e0;padding:.75rem .7rem">
-              <div style="font-size:.52rem;letter-spacing:.1em;text-transform:uppercase;color:#999;margin-bottom:.5rem">Navigation</div>
-              <div style="font-size:.63rem;color:#666;padding:.28rem .6rem;margin-bottom:.18rem;display:flex;align-items:center;gap:.35rem"><span style="opacity:.5">🔍</span> Find Supplier</div>
-              <div style="font-size:.65rem;font-weight:600;color:#2a6b3c;background:#e8f4e8;padding:.3rem .6rem;border-radius:4px;margin-bottom:.18rem;display:flex;align-items:center;gap:.35rem"><span>📊</span> Dashboard</div>
-              <div style="font-size:.63rem;color:#666;padding:.28rem .6rem;margin-bottom:.18rem;display:flex;align-items:center;gap:.35rem"><span style="opacity:.5">📋</span> Opportunities</div>
-              <div style="font-size:.63rem;color:#666;padding:.28rem .6rem;margin-bottom:.18rem;display:flex;align-items:center;gap:.35rem"><span style="opacity:.5">📄</span> Contracts</div>
-              <div style="font-size:.63rem;color:#666;padding:.28rem .6rem;margin-bottom:.18rem;display:flex;align-items:center;gap:.35rem"><span style="opacity:.5">👤</span> Account</div>
-              <div style="margin-top:.8rem;border-top:1px solid #ddd;padding-top:.6rem">
-                <div style="font-size:.52rem;letter-spacing:.1em;text-transform:uppercase;color:#999;margin-bottom:.4rem">Period</div>
-                <div style="font-size:.6rem;background:#2a6b3c;color:white;padding:.18rem .5rem;border-radius:3px;display:inline-block">All Time ▾</div>
-              </div>
-            </div>
-            <div style="background:#f8f8f8;padding:.75rem .85rem;overflow:hidden">
-              <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:.45rem;margin-bottom:.7rem">
-                <div class="edkpi"><div class="edkpi-n">$20K</div><div class="edkpi-d">↑ 70%</div><div class="edkpi-l">Income</div></div>
-                <div class="edkpi"><div class="edkpi-n">50K</div><div class="edkpi-d" style="color:#c14456">↓ 10%</div><div class="edkpi-l">Customers</div></div>
-                <div class="edkpi"><div class="edkpi-n">4,186</div><div class="edkpi-d" style="color:#2a6b3c">Active</div><div class="edkpi-l">Suppliers</div></div>
-              </div>
-              <div style="display:grid;grid-template-columns:1.4fr 1fr;gap:.5rem">
-                <div class="edcard"><div class="edtitle">Revenue by month ($K)</div>
-                  <div style="display:flex;align-items:flex-end;gap:.25rem;height:52px;margin-bottom:.2rem">
-                    <div style="flex:1;background:#c8e6c9;border-radius:2px 2px 0 0;height:35%"></div>
-                    <div style="flex:1;background:#a5d6a7;border-radius:2px 2px 0 0;height:48%"></div>
-                    <div style="flex:1;background:#81c784;border-radius:2px 2px 0 0;height:55%"></div>
-                    <div style="flex:1;background:#66bb6a;border-radius:2px 2px 0 0;height:62%"></div>
-                    <div style="flex:1;background:#4caf50;border-radius:2px 2px 0 0;height:70%"></div>
-                    <div style="flex:1;background:#43a047;border-radius:2px 2px 0 0;height:78%"></div>
-                    <div style="flex:1;background:#388e3c;border-radius:2px 2px 0 0;height:85%"></div>
-                    <div style="flex:1;background:#2e7d32;border-radius:2px 2px 0 0;height:100%"></div>
-                  </div>
-                  <div style="display:flex;justify-content:space-between;font-size:.48rem;color:#999"><span>May</span><span>Jun</span><span>Jul</span><span>Aug</span><span>Sep</span><span>Oct</span><span>Nov</span><span>Dec</span></div>
-                </div>
-                <div class="edcard"><div class="edtitle">Top Suppliers</div>
-                  <div class="erow"><span>Green Solutions</span><span style="color:#2a6b3c;font-weight:600">★ 4.9</span></div>
-                  <div class="erow"><span>Organic Linen LLC</span><span style="color:#2a6b3c;font-weight:600">★ 4.8</span></div>
-                  <div class="erow"><span>Cahaya Silk, FEZ</span><span style="color:#2a6b3c;font-weight:600">★ 4.7</span></div>
-                  <div class="erow"><span>Marine Global</span><span style="color:#2a6b3c;font-weight:600">★ 4.6</span></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- E3: Opportunities with left nav -->
-        <div class="c-screen" id="es-2" style="padding:0;display:flex;flex-direction:column">
-          <div class="etop"><div class="elogo"><div class="esq"></div><div class="ebn">Eco Connect</div></div><div style="font-size:.58rem;color:rgba(255,255,255,.4)">Opportunities</div></div>
-          <div style="display:grid;grid-template-columns:160px 1fr;flex:1;overflow:hidden">
-            <div style="background:#f0f0f0;border-right:1px solid #e0e0e0;padding:.75rem .7rem">
-              <div style="font-size:.52rem;letter-spacing:.1em;text-transform:uppercase;color:#999;margin-bottom:.5rem">Navigation</div>
-              <div style="font-size:.63rem;color:#666;padding:.28rem .6rem;margin-bottom:.18rem;display:flex;align-items:center;gap:.35rem"><span style="opacity:.5">🔍</span> Find Supplier</div>
-              <div style="font-size:.63rem;color:#666;padding:.28rem .6rem;margin-bottom:.18rem;display:flex;align-items:center;gap:.35rem"><span style="opacity:.5">📊</span> Dashboard</div>
-              <div style="font-size:.65rem;font-weight:600;color:#2a6b3c;background:#e8f4e8;padding:.3rem .6rem;border-radius:4px;margin-bottom:.18rem;display:flex;align-items:center;gap:.35rem"><span>📋</span> Opportunities</div>
-              <div style="font-size:.63rem;color:#666;padding:.28rem .6rem;margin-bottom:.18rem;display:flex;align-items:center;gap:.35rem"><span style="opacity:.5">📄</span> Contracts</div>
-              <div style="font-size:.63rem;color:#666;padding:.28rem .6rem;margin-bottom:.18rem;display:flex;align-items:center;gap:.35rem"><span style="opacity:.5">👤</span> Account</div>
-              <div style="margin-top:.8rem;border-top:1px solid #ddd;padding-top:.6rem">
-                <div style="font-size:.52rem;color:#999;margin-bottom:.3rem">Status</div>
-                <div style="font-size:.56rem;background:#2a6b3c;color:white;padding:.15rem .45rem;border-radius:20px;display:inline-block">Open</div>
-              </div>
-            </div>
-            <div style="background:#f8f8f8;padding:.75rem .85rem;overflow:hidden">
-              <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:.35rem;margin-bottom:.6rem">
-                <div style="background:white;border:1px solid #eee;border-radius:4px;padding:.4rem .55rem;text-align:center"><div style="font-size:.85rem;font-weight:700;color:#0a0a0a">25</div><div style="font-size:.5rem;color:#888;text-transform:uppercase;letter-spacing:.08em">Applications</div></div>
-                <div style="background:white;border:1px solid #eee;border-radius:4px;padding:.4rem .55rem;text-align:center"><div style="font-size:.85rem;font-weight:700;color:#2a6b3c">10</div><div style="font-size:.5rem;color:#888;text-transform:uppercase;letter-spacing:.08em">Days to close</div></div>
-                <div style="background:white;border:1px solid #eee;border-radius:4px;padding:.4rem .55rem;text-align:center"><div style="font-size:.85rem;font-weight:700;color:#0a0a0a">150</div><div style="font-size:.5rem;color:#888;text-transform:uppercase;letter-spacing:.08em">Views</div></div>
-              </div>
-              <div style="background:white;border:1px solid #e8e8e8;border-radius:4px;overflow:hidden">
-                <div style="display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;padding:.3rem .6rem;background:#f5f5f5;font-size:.52rem;letter-spacing:.06em;text-transform:uppercase;color:#888;border-bottom:1px solid #eee">
-                  <span>Company</span><span>Applied</span><span>Price</span><span>Cert. body</span><span>Status</span>
-                </div>
-                <div style="display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;padding:.32rem .6rem;border-bottom:1px solid #f0f0f0;font-size:.6rem;color:#333;align-items:center"><span style="font-weight:500">Guilt-Free Hides</span><span>Today, 2m ago</span><span style="color:#2a6b3c;font-weight:600">$500</span><span style="font-size:.52rem">Ecocert</span><span style="font-size:.52rem;padding:.1rem .35rem;background:#fef3cd;color:#856404;border-radius:3px">Pending</span></div>
-                <div style="display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;padding:.32rem .6rem;border-bottom:1px solid #f0f0f0;font-size:.6rem;color:#333;align-items:center"><span style="font-weight:500">Corn. van Dijk BV</span><span>Today, 5m ago</span><span style="color:#2a6b3c;font-weight:600">$1,000</span><span style="font-size:.52rem">Intertek</span><span style="font-size:.52rem;padding:.1rem .35rem;background:#fef3cd;color:#856404;border-radius:3px">Pending</span></div>
-                <div style="display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;padding:.32rem .6rem;border-bottom:1px solid #f0f0f0;font-size:.6rem;color:#333;align-items:center"><span style="font-weight:500">Calicos Cotton</span><span>Today, 1h ago</span><span style="color:#2a6b3c;font-weight:600">$500</span><span style="font-size:.52rem">Control Union</span><span style="font-size:.52rem;padding:.1rem .35rem;background:#fee2e2;color:#991b1b;border-radius:3px">Rejected</span></div>
-                <div style="display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;padding:.32rem .6rem;font-size:.6rem;color:#333;align-items:center"><span style="font-weight:500">Conscious Cotton</span><span>Yesterday</span><span style="color:#2a6b3c;font-weight:600">$1,000</span><span style="font-size:.52rem">Control Union</span><span style="font-size:.52rem;padding:.1rem .35rem;background:#fef3cd;color:#856404;border-radius:3px">Pending</span></div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- E4: Contracts with left nav -->
-        <div class="c-screen" id="es-3" style="padding:0;display:flex;flex-direction:column">
-          <div class="etop"><div class="elogo"><div class="esq"></div><div class="ebn">Eco Connect</div></div><div style="font-size:.58rem;color:rgba(255,255,255,.4)">Contracts & PO Management</div></div>
-          <div style="display:grid;grid-template-columns:160px 1fr;flex:1;overflow:hidden">
-            <div style="background:#f0f0f0;border-right:1px solid #e0e0e0;padding:.75rem .7rem">
-              <div style="font-size:.52rem;letter-spacing:.1em;text-transform:uppercase;color:#999;margin-bottom:.5rem">Navigation</div>
-              <div style="font-size:.63rem;color:#666;padding:.28rem .6rem;margin-bottom:.18rem;display:flex;align-items:center;gap:.35rem"><span style="opacity:.5">🔍</span> Find Supplier</div>
-              <div style="font-size:.63rem;color:#666;padding:.28rem .6rem;margin-bottom:.18rem;display:flex;align-items:center;gap:.35rem"><span style="opacity:.5">📊</span> Dashboard</div>
-              <div style="font-size:.63rem;color:#666;padding:.28rem .6rem;margin-bottom:.18rem;display:flex;align-items:center;gap:.35rem"><span style="opacity:.5">📋</span> Opportunities</div>
-              <div style="font-size:.65rem;font-weight:600;color:#2a6b3c;background:#e8f4e8;padding:.3rem .6rem;border-radius:4px;margin-bottom:.18rem;display:flex;align-items:center;gap:.35rem"><span>📄</span> Contracts</div>
-              <div style="font-size:.63rem;color:#666;padding:.28rem .6rem;margin-bottom:.18rem;display:flex;align-items:center;gap:.35rem"><span style="opacity:.5">👤</span> Account</div>
-              <div style="margin-top:.8rem;border-top:1px solid #ddd;padding-top:.6rem">
-                <div style="font-size:.52rem;color:#999;margin-bottom:.3rem">Contract value</div>
-                <div style="font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:#2a6b3c">$250K</div>
-                <div style="font-size:.52rem;color:#888">Active contract</div>
-              </div>
-            </div>
-            <div class="econ" style="border-radius:0">
-              <div class="econh"><div class="econt">Calicos Cotton Private Limited</div><div class="econv">$250,000</div></div>
-              <div class="econc"><div class="econct"><div><div class="econcn">Active Contract · Ends Dec 2027</div><div style="font-size:.54rem;color:#888;margin-top:.08rem">15,500 units · 22 months remaining</div></div><span class="econcs">65% Delivered</span></div><div class="econcp"><div class="econcb" style="width:65%"></div></div><div class="econcm"><span>$8,250 paid of $250,000</span><span>Next PO: 29 Dec 2025</span></div></div>
-              <div style="margin-top:.5rem"><div style="font-size:.52rem;letter-spacing:.1em;text-transform:uppercase;color:#888;margin-bottom:.38rem">Recent Purchase Orders</div><div class="epos"><div class="epo"><div class="epo-id">PO-00123</div><div class="epo-v" style="color:#2a6b3c">$120 · Received</div></div><div class="epo"><div class="epo-id">PO-23009</div><div class="epo-v" style="color:#bb6125">-$50 · Pending</div></div><div class="epo"><div class="epo-id">PO-23012</div><div class="epo-v" style="color:#bb6125">-$50 · Pending</div></div><div class="epo"><div class="epo-id">PO-23015</div><div class="epo-v" style="color:#2a6b3c">$120 · Received</div></div></div></div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="c-foot" style="background:#1e2e22;border-top-color:rgba(255,255,255,.08)">
-        <div class="pdots"><div class="pdot on" style="background:var(--eco-lt)" onclick="goE(0)"></div><div class="pdot" onclick="goE(1)"></div><div class="pdot" onclick="goE(2)"></div><div class="pdot" onclick="goE(3)"></div></div>
-        <div class="c-lbl" id="e-lbl" style="color:rgba(255,255,255,.4)">Platform <b style="color:var(--eco-lt)">Search</b></div>
-      </div>
-    </div>
-    <!-- ECO TEXT BELOW -->
-    <div class="eco-bottom">
-      <div class="eco-copy">
-  <p>Working inside luxury CX for a decade meant sitting close to a specific kind of risk: brands knew exactly how their sales associates performed at the point of sale, but had almost no visibility upstream. When Loro Piana’s Peruvian supply chain came to light, or when LVMH houses found themselves unable to account for labour practices three tiers deep, the pattern was consistent, not negligence, but a genuine absence of infrastructure. Certifications lived in PDFs, supplier claims were unverifiable, and the industry found out about problems the same way the public did.</p>
-  <p>EcoConnect was built to close that infrastructure gap: supplier discovery, certification verification, RFP management, and contract tracking in one stack. Over 4,000 verified suppliers at launch. The same trust problem I had been solving on the consumer side (are these people who they say they are?) applied just as clearly to the supply side.</p>
-  <p class="muted">Built with a three-person team across three continents. Paused in 2025 as US-China tariffs made the green premium untenable.</p>
-  <p>Timing was wrong. The build was not.</p>
-</div>
-<div class="eco-right">
-        <div class="eco-award">
-          <div class="eco-award-top">
-            <div class="eco-emblem">
-              <img class="eco-mit-logo" src="https://designx.mit.edu/wp-content/uploads/2022/02/WordpressSocialLinkSEO.png" alt="MITdesignX logo">
-            </div>
-            <div class="eco-award-copy">
-              <div class="eco-award-label">Recognition</div>
-              <div class="eco-award-name">MITdesignX Demo Day Winner</div>
-              <div class="eco-award-year">Dubai · 2025</div>
-            </div>
-          </div>
-          <p class="eco-award-desc">Beat ventures with $1M+ in government contracts. Bootstrapped , built during a full-time executive role and an ESSEC EMBA with Mannheim dual degree. No dedicated time. No external funding.</p>
-        </div>
-        <div class="eco-facts">
-          <div class="eco-fact">
-            <span class="eco-fact-n">4,186</span>
-            <span class="eco-fact-l">certified suppliers at launch</span>
-          </div>
-          <div class="eco-fact">
-            <span class="eco-fact-n">3</span>
-            <span class="eco-fact-l">person team across three continents</span>
-          </div>
-        </div>
-        <div class="eco-mi"><div class="eco-ml">Stack</div><div class="eco-mv">Node.js · React · PostgreSQL · AWS · Elasticsearch</div></div>
-        <div class="eco-mi"><div class="eco-ml">Status</div><div class="eco-mv">Paused 2025. Platform live. IP retained.</div></div>
-      </div>
     </div>
   </div>
 </section>
@@ -1614,6 +1559,80 @@ document.querySelector('.hero').dataset.variant='2';
     if (delta > 0) showRelative(-1);
     else showRelative(1);
   }, {passive:true});
+})();
+</script>
+
+<script>
+/* ── CAREER TIMELINE SIDEBAR ── */
+(function(){
+  const sections = ['cxg','ge','eco','aud'];
+  const items    = document.querySelectorAll('.tl-item');
+  const fill     = document.getElementById('tl-track-fill');
+  const sidebar  = document.querySelector('.tl-sidebar');
+
+  /* show sidebar only after hero is scrolled past */
+  const hero = document.querySelector('.hero');
+  if(hero && sidebar){
+    const heroObs = new IntersectionObserver(entries=>{
+      sidebar.classList.toggle('tl-visible', !entries[0].isIntersecting);
+    },{threshold:0.1});
+    heroObs.observe(hero);
+  }
+
+  function setActive(id){
+    items.forEach(el=>el.classList.toggle('tl-active', el.dataset.section === id));
+    const idx = sections.indexOf(id);
+    if(idx < 0 || !fill) return;
+    /* distribute fill evenly: 0% at first section, 100% at last */
+    fill.style.height = (idx / (sections.length - 1) * 100) + '%';
+  }
+
+  const obs = new IntersectionObserver(entries=>{
+    entries.forEach(e=>{ if(e.isIntersecting) setActive(e.target.id); });
+  },{threshold:0.25});
+
+  sections.forEach(id=>{ const el=document.getElementById(id); if(el) obs.observe(el); });
+
+  items.forEach(item=>{
+    item.addEventListener('click', e=>{
+      e.preventDefault();
+      const t = document.getElementById(item.dataset.section);
+      if(t) t.scrollIntoView({behavior:'smooth'});
+    });
+  });
+})();
+</script>
+
+<script>
+(function(){
+  const slides  = document.querySelectorAll('.eco-pc-slide');
+  const dots    = document.querySelectorAll('.eco-pc-dot');
+  const caption = document.querySelector('.eco-pc-caption');
+  if(!slides.length) return;
+
+  let current = 0;
+  let timer;
+
+  function show(idx){
+    slides[current].classList.remove('eco-pc-active');
+    dots[current].classList.remove('eco-pc-dot-active');
+    current = idx;
+    slides[current].classList.add('eco-pc-active');
+    dots[current].classList.add('eco-pc-dot-active');
+    if(caption) caption.textContent = slides[current].dataset.caption || '';
+  }
+
+  function next(){ show((current + 1) % slides.length); }
+
+  function startTimer(){ timer = setInterval(next, 4000); }
+  function resetTimer(){ clearInterval(timer); startTimer(); }
+
+  dots.forEach(dot => {
+    dot.addEventListener('click', () => { show(+dot.dataset.idx); resetTimer(); });
+  });
+
+  if(caption) caption.textContent = slides[0].dataset.caption || '';
+  startTimer();
 })();
 </script>
 
