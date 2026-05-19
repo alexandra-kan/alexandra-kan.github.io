@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="color-scheme" content="light">
-<title>Alexandra Kan · B2B2C Growth · Platform Acquisition · GTM Strategy</title>
+<title>Alexandra Kan · Operating Systems · Platform Growth · GTM Strategy</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400;1,700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -62,12 +62,12 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:1rem 4%;display:flex
 }
 .hero::after{content:''}
 .hero-audacity{
-  position:absolute;right:4%;bottom:.06em;
-  font-family:'Impact','Arial Black',sans-serif;font-size:clamp(4rem,10vw,12rem);
-  letter-spacing:.06em;color:rgba(255,255,255,.025);line-height:.8;
-  z-index:0;pointer-events:none;user-select:none;
+  position:absolute;right:0;top:70%;
+  font-family:'Impact','Arial Black',sans-serif;font-size:clamp(6rem,14vw,14rem);
+  letter-spacing:.06em;color:rgba(255,255,255,.025);line-height:.85;
+  z-index:0;pointer-events:none;user-select:none;white-space:nowrap;
 }
-.hero-aud-a2{color:rgba(122,31,46,.4)}
+.hero-aud-a2{color:rgba(122,31,46,.15)}
 .hero-main{
   display:flex;flex-direction:column;justify-content:center;
   padding:9rem 4% 2rem;position:relative;z-index:1;
@@ -174,9 +174,9 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:1rem 4%;display:flex
 .track p{font-size:.82rem;line-height:1.72;color:var(--graphite)}
 
 /* CXG FLAGSHIP STORY */
-.case-intro{max-width:900px;margin:0 auto;padding:4.8rem 2rem 1rem}
+.case-intro{max-width:900px;margin:0 auto;padding:2.5rem 2rem 1rem}
 .case-kicker{font-size:.58rem;letter-spacing:.22em;text-transform:uppercase;color:var(--burgundy);margin-bottom:1rem}
-.case-intro h2{font-size:clamp(2.2rem,4.8vw,4.2rem)!important;max-width:840px;margin-bottom:1.35rem}
+.case-intro h2{font-size:clamp(1.8rem,3.2vw,2.8rem)!important;max-width:840px;margin-bottom:1.35rem}
 .case-intro p{max-width:760px;font-size:1rem;line-height:1.9;color:var(--graphite)}
 .chapter-label{display:inline-flex;align-items:center;gap:.55rem;font-size:.56rem;letter-spacing:.18em;text-transform:uppercase;color:var(--slate);margin-bottom:.9rem}
 .chapter-label::before{content:'';display:block;width:1.25rem;height:1px;background:var(--burgundy)}
@@ -184,7 +184,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:1rem 4%;display:flex
 .hero-firstname,.hero-lastname,.hero-pre,.hero-strip,.hero-bottom{opacity:1!important}
 
 /* WORK DIVIDER */
-.work-div{max-width:900px;margin:0 auto;padding:3.2rem 2rem 1.2rem;display:flex;align-items:center;gap:1.5rem}
+.work-div{max-width:900px;margin:0 auto;padding:2rem 2rem .8rem;display:flex;align-items:center;gap:1.5rem}
 .wd-text{font-size:.6rem;letter-spacing:.22em;text-transform:uppercase;color:var(--slate);white-space:nowrap}
 .wd-line{flex:1;height:1px;background:var(--rule)}
 .wd-count{font-family:'Playfair Display',serif;font-size:.82rem;color:var(--slate);font-style:italic;white-space:nowrap}
@@ -547,11 +547,9 @@ footer{background:#EDEBE6;border-top:1px solid var(--rule);padding:3.5rem 2rem}
     linear-gradient(135deg,#F8F7F5 0%,#F1EEE8 54%,#E8E1D9 100%);
   border-bottom:1px solid var(--rule);
 }
-.hero[data-variant="2"]::after{
-  color:rgba(122,31,46,.055);
-  right:-.08em;
-  bottom:.12em;
-}
+.hero[data-variant="2"]::after{content:''}
+.hero[data-variant="2"] .hero-audacity{color:rgba(122,31,46,.055)}
+.hero[data-variant="2"] .hero-aud-a2{color:rgba(122,31,46,.15)}
 .hero[data-variant="2"] .hero-inner{position:relative}
 .hero[data-variant="2"] .hero-inner::before{
   content:'';
@@ -605,7 +603,7 @@ footer{background:#EDEBE6;border-top:1px solid var(--rule);padding:3.5rem 2rem}
 .s-ey::before{display:none!important}
 .s-idx{font-family:'Playfair Display',serif;font-style:italic;font-weight:400;font-size:.78rem;letter-spacing:0;text-transform:none;line-height:1;color:var(--burgundy);opacity:.8}
 h2{font-size:clamp(1.85rem,3.2vw,2.75rem)!important;line-height:1.08!important}
-.section{padding:5.5rem 2rem 6.5rem}
+.section{padding:3.5rem 2rem 4rem}
 
 /* Eco section s-ey , override for dark bg */
 #eco .s-head{margin-bottom:3.5rem}
@@ -990,7 +988,7 @@ h2{font-size:clamp(1.85rem,3.2vw,2.75rem)!important;line-height:1.08!important}
           <span class="hero-n2">Kan</span>
         </h1>
       </div>
-      <p class="hero-statement a3">I build the operating systems that help complex platform businesses scale.</p>
+      <p class="hero-statement a3">I build operating systems for complex, trust-sensitive platform businesses.</p>
       <div class="hero-strip a4">
         <span class="hero-strip-txt">Operating Systems</span>
         <span class="hero-strip-dot"></span>
@@ -1017,12 +1015,12 @@ h2{font-size:clamp(1.85rem,3.2vw,2.75rem)!important;line-height:1.08!important}
         <div class="proof-label">profiles in 3 years<br>vs 40K in prior 17</div>
       </div>
       <div class="proof-item">
-        <div class="proof-val">0→6</div>
-        <div class="proof-label">growth team built<br>11 markets · 80 countries</div>
+        <div class="proof-val">1→6</div>
+        <div class="proof-label">team built<br>11 markets · 80 countries</div>
       </div>
       <div class="proof-item" style="border-right:none">
-        <div class="proof-val">Winner</div>
-        <div class="proof-label">MITdesignX Demo Day<br>Dubai · 2025</div>
+        <div class="proof-val">MITdesignX</div>
+        <div class="proof-label">Demo Day Winner<br>Dubai · 2025</div>
       </div>
     </div>
   </div>
@@ -1033,18 +1031,18 @@ h2{font-size:clamp(1.85rem,3.2vw,2.75rem)!important;line-height:1.08!important}
   <div class="track-inner">
     <div class="track">
       <div class="track-k">Platform Growth</div>
-      <h3>Supply-side <em>growth</em></h3>
+      <h3>Verified supply-side <em>growth</em></h3>
       <p>Recruiting, onboarding, and activating the people or businesses a platform depends on: evaluators, suppliers, communities, operators.</p>
     </div>
     <div class="track">
       <div class="track-k">Conversion Systems</div>
       <h3>Trust-aware <em>conversion</em></h3>
-      <p>Reducing friction without lowering quality: verification, KYC logic, profile enrichment, onboarding sequencing, and funnel diagnostics.</p>
+      <p>Reducing friction without lowering quality: verification logic, profile enrichment, onboarding sequencing, and funnel diagnostics.</p>
     </div>
     <div class="track">
       <div class="track-k">AI Operations</div>
-      <h3>Agentic <em>workflows</em></h3>
-      <p>Building internal tools, automation, dashboards, and AI-assisted operating systems that let small teams perform like larger ones.</p>
+      <h3>AI-enabled <em>operating systems</em></h3>
+      <p>Building internal tools, automation, dashboards, and AI-assisted workflows that let small teams perform with larger-team leverage.</p>
     </div>
   </div>
 </section>
@@ -1055,9 +1053,9 @@ h2{font-size:clamp(1.85rem,3.2vw,2.75rem)!important;line-height:1.08!important}
     <div style="font-size:.58rem;letter-spacing:.22em;text-transform:uppercase;color:var(--burgundy);margin-bottom:3rem;display:flex;align-items:center;gap:.5rem"><span style="display:block;width:1.1rem;height:1px;background:var(--burgundy)"></span>Alexandra Kan</div>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start">
       <div>
-        <p style="font-family:'Playfair Display',serif;font-style:italic;font-size:1.12rem;color:var(--graphite);line-height:1.75;margin-bottom:1.5rem">The strongest operating work starts with the real business constraint: what is opaque, what is slowing decisions, who must be acquired, and what has to exist before the engine can scale.</p>
-        <p style="font-size:.95rem;color:var(--graphite);line-height:1.9;margin-bottom:1.1rem">Based in Paris, built across the US, Europe, APAC, and MENA. Fifteen years in luxury, data, and B2B2C platforms left me with one conviction: growth scales when product, trust, operating discipline, and acquisition are built together.</p>
-        <p style="font-size:.95rem;color:var(--graphite);line-height:1.9;margin-bottom:1.8rem">Outside work, I fundraise through expedition campaigns for chronically ill children and women survivors of domestic abuse, with Courage Kinderklinik (Germany) and Women on a Mission (France). The latest: a women-only trip to the North Pole. I find it useful to regularly do things that are harder than they need to be.</p>
+        <p style="font-family:'Playfair Display',serif;font-style:italic;font-size:1.12rem;color:var(--graphite);line-height:1.75;margin-bottom:1.5rem">The strongest operating work starts with the real constraint: what is opaque, what is slowing decisions, who must be acquired, and what has to exist before the engine can scale.</p>
+        <p style="font-size:.95rem;color:var(--graphite);line-height:1.9;margin-bottom:1.1rem">Paris-based, with fifteen years across luxury, data, and B2B2C platforms in the US, Europe, APAC, and MENA. My work sits where product, trust, operating discipline, and acquisition have to move together.</p>
+        <p style="font-size:.95rem;color:var(--graphite);line-height:1.9;margin-bottom:1.8rem">Outside work, I fundraise through expedition campaigns with Courage Kinderklinik and Women on a Mission. The latest: a women-only North Pole expedition. I find it useful to regularly do things that are harder than they need to be.</p>
         <div style="padding-top:1.2rem;border-top:1px solid var(--rule);margin-bottom:1.2rem;display:flex;gap:1.8rem;flex-wrap:wrap">
           <div style="font-size:.58rem;letter-spacing:.22em;text-transform:uppercase;color:var(--slate)">ESSEC & Mannheim Business School EMBA</div>
           <div style="font-size:.58rem;letter-spacing:.22em;text-transform:uppercase;color:var(--slate)">North America · Europe · MENA · APAC</div>
@@ -1079,11 +1077,11 @@ h2{font-size:clamp(1.85rem,3.2vw,2.75rem)!important;line-height:1.08!important}
         </button>
         <button class="about-gallery-item about-gallery-item--tall about-gallery-item--chimborazo" type="button" data-about-image data-full="https://alexandra-kan.github.io/img/img_3.png" data-caption="Chimborazo · expedition conditions" aria-label="Open image: Chimborazo · expedition conditions">
           <img src="https://alexandra-kan.github.io/img/img_3.png" alt="Chimborazo · expedition conditions" loading="lazy" decoding="async">
-          <span class="about-gallery-tag">Chimborazo</span>
+          <span class="about-gallery-tag">Chimborazo · Ecuador</span>
         </button>
         <button class="about-gallery-item about-gallery-item--wide" type="button" data-about-image data-full="https://alexandra-kan.github.io/img/img_7.JPG" data-caption="Women on a Mission · fundraising expedition" aria-label="Open image: Women on a Mission · fundraising expedition">
           <img src="https://alexandra-kan.github.io/img/img_7.JPG" alt="Women on a Mission fundraising expedition" loading="lazy" decoding="async">
-          <span class="about-gallery-tag">WOAM expedition</span>
+          <span class="about-gallery-tag">Women on a Mission</span>
         </button>
       </div>
     </div>
@@ -1093,22 +1091,21 @@ h2{font-size:clamp(1.85rem,3.2vw,2.75rem)!important;line-height:1.08!important}
 <div class="work-div">
   <span class="wd-text">Flagship case</span>
   <span class="wd-line"></span>
-  <span class="wd-count">2020&ndash;2025</span>
+  <span class="wd-count">2020&ndash;2026</span>
 </div>
 
 <section class="case-intro" aria-label="CXG flagship case introduction">
   <div class="case-kicker">CXG · business transformation + verified growth</div>
   <h2>CXG: two functions built from scratch</h2>
-  <p>At CXG, I built functions where the business had outgrown informal systems. Business Transformation created commercial visibility, forecasting discipline, and operating control across 11 business units. Growth & Engagement scaled the verified supply-side network the platform depended on. The through-line was the same: identify the constraint, build the structure, establish the cadence, and turn it into a repeatable operating engine.</p>
+  <p>At CXG, I built functions where the business had outgrown informal systems. Business Transformation created commercial visibility, forecasting discipline, and operating control across 11 business units. Growth & Engagement scaled the verified supply-side network the platform depended on. The through-line: identify the constraint, build the structure, establish the cadence, and turn it into a repeatable operating engine.</p>
 </section>
 
 <!-- 01 BUSINESS TRANSFORMATION -->
 <section class="section" id="cxg">
   <div class="si">
-    <div class="s-head"><div><div class="s-ey"><span class="s-idx">01A /</span> 2020–2022 · CXG · BUSINESS TRANSFORMATION</div><h2>Build 1 - <em>from fragmented data to commercial control</em></h2></div></div>
+    <div class="s-head"><div><div class="s-ey"><span class="s-idx">01A /</span> 2020–2022 · CXG · BUSINESS TRANSFORMATION</div><h2><em>From fragmented data to commercial control</em></h2></div></div>
     <div style="max-width:720px;margin:0 auto 2.5rem">
-      <div class="chapter-label">Build 1 · business transformation from zero</div>
-      <p style="font-size:.95rem;color:var(--graphite);line-height:1.88">No CRM, no ERP, no resource-planning layer — commercial visibility lived across hundreds of isolated Excel files across 11 business units. I built the company's first live Power BI financial forecast, making pipeline, delivery demand, budget variance, and capacity constraints visible in real time. This was not a reporting cleanup; it gave leadership a shared operating view for decisions on revenue, resources, and regional priorities.</p>
+      <p style="font-size:.95rem;color:var(--graphite);line-height:1.88">No CRM, no ERP, no resource-planning layer: commercial visibility lived across hundreds of isolated Excel files across 11 business units. I built the company's first live Power BI financial forecast, making pipeline, delivery demand, budget variance, and capacity constraints visible in real time. It gave leadership a shared operating view for decisions on revenue, resources, and regional priorities.</p>
     </div>
     <div class="bi">
 
@@ -1116,20 +1113,20 @@ h2{font-size:clamp(1.85rem,3.2vw,2.75rem)!important;line-height:1.08!important}
         <div class="bi-body">
           <div class="bi-kpis"><div class="bi-kpi"><div class="bi-kn">$4.2M</div><div class="bi-kl">Revenue YTD</div><div class="bi-kd bup">▲ +10.5% vs budget</div></div><div class="bi-kpi"><div class="bi-kn">$18.6M</div><div class="bi-kl">12M Forecast</div><div class="bi-kd bnu">23 opportunities</div></div><div class="bi-kpi"><div class="bi-kn">$8.4M</div><div class="bi-kl">Active Pipeline</div><div class="bi-kd bup">▲ +31% vs Q4</div></div><div class="bi-kpi"><div class="bi-kn">94%</div><div class="bi-kl">Delivery Rate</div><div class="bi-kd bup">SLA: 90%</div></div></div>
           <div class="bi-charts">
-            <div class="bi-card"><div class="bi-ct">Revenue , Actual vs Budget vs Forecast ($K)</div><div class="rev-chart"><div class="rbg"><div class="rb a" style="height:58px"></div><div class="rb b" style="height:52px"></div></div><div class="rbg"><div class="rb a" style="height:68px"></div><div class="rb b" style="height:62px"></div></div><div class="rbg"><div class="rb a" style="height:72px"></div><div class="rb b" style="height:70px"></div></div><div class="rbg"><div class="rb a" style="height:80px"></div><div class="rb b" style="height:74px"></div></div><div class="rbg" style="opacity:.88"><div class="rb f" style="height:85px"></div><div class="rb b" style="height:78px"></div></div><div class="rbg" style="opacity:.72"><div class="rb p" style="height:90px"></div><div class="rb b" style="height:82px"></div></div><div class="rbg" style="opacity:.58"><div class="rb p" style="height:88px"></div><div class="rb b" style="height:85px"></div></div><div class="rbg" style="opacity:.46"><div class="rb p" style="height:93px"></div><div class="rb b" style="height:88px"></div></div></div><div class="rl"><div class="rlg">Q1'25</div><div class="rlg">Q2'25</div><div class="rlg">Q3'25</div><div class="rlg">Q4'25</div><div class="rlg">Q1'26</div><div class="rlg">Q2'26F</div><div class="rlg">Q3'26F</div><div class="rlg">Q4'26F</div></div><div class="rleg"><div class="rli"><div class="rld" style="background:var(--cxg)"></div>Actual</div><div class="rli"><div class="rld" style="background:var(--cxg-tl)"></div>Budget</div><div class="rli"><div class="rld" style="background:var(--cxg-or)"></div>Forecast</div><div class="rli"><div class="rld" style="background:var(--cxg-sd);border:1px dashed var(--cxg-or)"></div>Projected</div></div></div>
+            <div class="bi-card"><div class="bi-ct">Revenue: Actual vs Budget vs Forecast ($K)</div><div class="rev-chart"><div class="rbg"><div class="rb a" style="height:58px"></div><div class="rb b" style="height:52px"></div></div><div class="rbg"><div class="rb a" style="height:68px"></div><div class="rb b" style="height:62px"></div></div><div class="rbg"><div class="rb a" style="height:72px"></div><div class="rb b" style="height:70px"></div></div><div class="rbg"><div class="rb a" style="height:80px"></div><div class="rb b" style="height:74px"></div></div><div class="rbg" style="opacity:.88"><div class="rb f" style="height:85px"></div><div class="rb b" style="height:78px"></div></div><div class="rbg" style="opacity:.72"><div class="rb p" style="height:90px"></div><div class="rb b" style="height:82px"></div></div><div class="rbg" style="opacity:.58"><div class="rb p" style="height:88px"></div><div class="rb b" style="height:85px"></div></div><div class="rbg" style="opacity:.46"><div class="rb p" style="height:93px"></div><div class="rb b" style="height:88px"></div></div></div><div class="rl"><div class="rlg">Q1'25</div><div class="rlg">Q2'25</div><div class="rlg">Q3'25</div><div class="rlg">Q4'25</div><div class="rlg">Q1'26</div><div class="rlg">Q2'26F</div><div class="rlg">Q3'26F</div><div class="rlg">Q4'26F</div></div><div class="rleg"><div class="rli"><div class="rld" style="background:var(--cxg)"></div>Actual</div><div class="rli"><div class="rld" style="background:var(--cxg-tl)"></div>Budget</div><div class="rli"><div class="rld" style="background:var(--cxg-or)"></div>Forecast</div><div class="rli"><div class="rld" style="background:var(--cxg-sd);border:1px dashed var(--cxg-or)"></div>Projected</div></div></div>
             <div class="bi-card"><div class="bi-ct">Pipeline by Stage ($M)</div><div class="pipe"><div class="pr"><span class="ps">Qualified</span><div class="pbw"><div class="pb" style="width:100%;background:var(--cxg)"><span class="pv">$12.1M · 38</span></div></div><span class="pc">38</span></div><div class="pr"><span class="ps">Proposal</span><div class="pbw"><div class="pb" style="width:64%;background:var(--cxg-sg)"><span class="pv">$7.8M · 19</span></div></div><span class="pc">19</span></div><div class="pr"><span class="ps">Negotiation</span><div class="pbw"><div class="pb" style="width:26%;background:var(--cxg-or)"><span class="pv">$3.2M</span></div></div><span class="pc">8</span></div><div class="pr"><span class="ps">Verbal Win</span><div class="pbw"><div class="pb" style="width:15%;background:var(--cxg-tl)"><span class="pv" style="color:var(--cxg)">$1.8M</span></div></div><span class="pc">4</span></div></div><div style="margin-top:.65rem;padding-top:.55rem;border-top:1px solid var(--rule)"><div style="font-size:.5rem;letter-spacing:.08em;text-transform:uppercase;color:var(--slate);margin-bottom:.38rem">Capacity vs Demand</div><div class="cap-rows"><div class="cr"><span class="crla">Europe</span><div class="crtr"><div class="crfi" style="width:82%;background:var(--cxg)"></div></div><span class="crpct">82%</span></div><div class="cr"><span class="crla">MENA</span><div class="crtr"><div class="crfi" style="width:95%;background:var(--cxg-rd)"></div></div><span class="crpct" style="color:var(--cxg-rd)">95%⚠</span></div><div class="cr"><span class="crla">APAC</span><div class="crtr"><div class="crfi" style="width:67%;background:var(--cxg-sg)"></div></div><span class="crpct">67%</span></div><div class="cr"><span class="crla">Americas</span><div class="crtr"><div class="crfi" style="width:54%;background:var(--cxg-tl)"></div></div><span class="crpct">54%</span></div></div></div></div>
           </div>
           <div class="bi-card"><div class="bi-ct">Regional Variance , Q1 2026 Actual vs Budget</div><table class="var-t"><thead><tr><th>Region</th><th>Budget</th><th>Actual</th><th>Variance</th><th>YoY</th><th>Missions</th><th>Avg Score</th></tr></thead><tbody><tr><td>Europe</td><td>$1,200K</td><td>$1,350K</td><td class="vp">+12.5%</td><td class="vp">+8%</td><td>8,420</td><td>8.2</td></tr><tr><td>MENA</td><td>$680K</td><td>$590K</td><td class="vn">–13.2%</td><td class="vp">+15%</td><td>4,100</td><td>7.5</td></tr><tr><td>APAC</td><td>$520K</td><td>$611K</td><td class="vp">+17.5%</td><td class="vp">+22%</td><td>3,890</td><td>7.9</td></tr><tr><td>Americas</td><td>$310K</td><td>$298K</td><td class="vn">–3.9%</td><td class="vp">+5%</td><td>1,840</td><td>7.7</td></tr><tr style="font-weight:500"><td>Total</td><td>$2,710K</td><td>$2,849K</td><td class="vp">+5.1%</td><td class="vp">+11%</td><td>18,250</td><td>7.9</td></tr></tbody></table></div>
-                <p class="cxg-note" style="margin-top:1.5rem">Data is proprietary. Figures are illustrative; the forecast architecture, operating logic, and dashboard structure are real.</p>
 </div>
     </div>
+    <p class="cxg-note">Data is proprietary. Figures are illustrative; the forecast architecture, operating logic, and dashboard structure are real.</p>
   </div>
 </section>
 
 <!-- 02 GROWTH ENGINE -->
 <section class="section" id="ge" style="border-bottom:none">
   <div class="si">
-    <div class="s-head"><div><div class="s-ey"><span class="s-idx">01B /</span> 2023–2026 · CXG · GROWTH ENGINE</div><h2>Build 2 - <em>building the verified growth engine</em></h2></div></div>
+    <div class="s-head"><div><div class="s-ey"><span class="s-idx">01B /</span> 2023–2026 · CXG · GROWTH ENGINE</div><h2><em>Scaling the verified growth engine</em></h2></div></div>
     <div class="ge-kpi-strip">
       <div class="ge-kpi">
         <div class="ge-kpi-n">46%</div>
@@ -1153,8 +1150,7 @@ h2{font-size:clamp(1.85rem,3.2vw,2.75rem)!important;line-height:1.08!important}
       </div>
     </div>
     <div style="max-width:720px;margin-bottom:3.5rem;margin-left:auto;margin-right:auto">
-      <div class="chapter-label">Build 2 · verified growth engine</div>
-      <p style="font-size:.95rem;color:var(--graphite);line-height:1.88">Built the global Growth & Engagement function from one to six people across 11 markets. Defined acquisition strategies per market, managed KPIs and budget, and redesigned the acquisition-to-activation journey around verified profile quality. The result: 55K verified profiles added in three years, a 5x registration increase, and lead-to-profile conversion rising from 27% to 46%.</p>
+      <p style="font-size:.95rem;color:var(--graphite);line-height:1.88">Built the global Growth & Engagement function from one to six people across 11 markets. Defined market-level acquisition strategies, managed KPIs and budget, and redesigned the acquisition-to-activation journey around verified profile quality. The result: 55K verified profiles added in three years, a 5x registration increase, and lead-to-profile conversion rising from 27% to 46%.</p>
     </div>
     <div>
         <div class="carousel">
@@ -1162,7 +1158,7 @@ h2{font-size:clamp(1.85rem,3.2vw,2.75rem)!important;line-height:1.08!important}
             <div class="cdot"></div><div class="cdot"></div><div class="cdot"></div>
             <div class="curl" id="g-url" style="background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.12);color:rgba(255,255,255,.6)">G&E Intelligence · Database Health</div>
           </div>
-          <div class="c-screens" style="height:370px;background:var(--cxg-ice)">
+          <div class="c-screens" style="height:400px;background:var(--cxg-ice)">
 
             <!-- GE Screen 1: Database Health & Utilization -->
             <div class="c-screen active" id="gs-0" style="padding:1.1rem 1.3rem">
@@ -1234,96 +1230,77 @@ h2{font-size:clamp(1.85rem,3.2vw,2.75rem)!important;line-height:1.08!important}
               </div>
             </div>
 
-            <!-- GE Screen 2: Channel Effectiveness & ROI -->
+            <!-- GE Screen 2: Budget & Acquisition ROI -->
             <div class="c-screen" id="gs-1" style="padding:1.1rem 1.3rem">
               <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:.9rem">
-                <div style="font-size:.62rem;color:var(--slate);letter-spacing:.1em;text-transform:uppercase">Channel Effectiveness & Acquisition ROI · FY 2025</div>
+                <div style="font-size:.62rem;color:var(--slate);letter-spacing:.1em;text-transform:uppercase">Budget & Acquisition ROI · FY 2025 · €300K managed</div>
                 <div style="display:flex;gap:.3rem">
-                  <span style="font-size:.54rem;padding:.13rem .48rem;background:var(--cxg);border-radius:3px;color:white">Direct</span>
-                  <span style="font-size:.54rem;padding:.13rem .48rem;background:var(--cxg-mist);border-radius:3px;color:var(--slate);border:1px solid var(--cxg-mist)">All channels</span>
+                  <span style="font-size:.54rem;padding:.13rem .48rem;background:var(--cxg);border-radius:3px;color:white">All channels</span>
+                  <span style="font-size:.54rem;padding:.13rem .48rem;background:var(--cxg-mist);border-radius:3px;color:var(--slate);border:1px solid var(--cxg-mist)">FY 2025</span>
                 </div>
               </div>
               <!-- KPIs -->
               <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:.5rem;margin-bottom:.85rem">
                 <div style="background:white;border:1px solid var(--cxg-mist);border-radius:4px;padding:.55rem .65rem">
-                  <div style="font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:700;color:var(--cxg);line-height:1">46%</div>
-                  <div style="font-size:.5rem;letter-spacing:.07em;text-transform:uppercase;color:var(--slate);margin-top:.12rem">Conversion rate</div>
-                  <div style="font-size:.54rem;color:var(--cxg-sg);margin-top:.15rem;font-weight:500">↑ from 27%</div>
+                  <div style="font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:700;color:var(--cxg);line-height:1">€300K</div>
+                  <div style="font-size:.5rem;letter-spacing:.07em;text-transform:uppercase;color:var(--slate);margin-top:.12rem">Annual budget</div>
+                  <div style="font-size:.54rem;color:var(--slate);margin-top:.15rem;font-weight:400">owned end-to-end</div>
                 </div>
                 <div style="background:white;border:1px solid var(--cxg-mist);border-radius:4px;padding:.55rem .65rem">
-                  <div style="font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:700;color:var(--cxg);line-height:1">$8.40</div>
-                  <div style="font-size:.5rem;letter-spacing:.07em;text-transform:uppercase;color:var(--slate);margin-top:.12rem">Avg cost / activation</div>
-                  <div style="font-size:.54rem;color:var(--cxg-sg);margin-top:.15rem;font-weight:500">↓ from $14.20</div>
+                  <div style="font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:700;color:var(--cxg);line-height:1">3.2×</div>
+                  <div style="font-size:.5rem;letter-spacing:.07em;text-transform:uppercase;color:var(--slate);margin-top:.12rem">Blended ROAS</div>
+                  <div style="font-size:.54rem;color:var(--cxg-sg);margin-top:.15rem;font-weight:500">↑ from 1.4× (2023)</div>
                 </div>
                 <div style="background:white;border:1px solid var(--cxg-mist);border-radius:4px;padding:.55rem .65rem">
-                  <div style="font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:700;color:var(--cxg);line-height:1">2,641</div>
-                  <div style="font-size:.5rem;letter-spacing:.07em;text-transform:uppercase;color:var(--slate);margin-top:.12rem">New activations Q4</div>
-                  <div style="font-size:.54rem;color:var(--cxg-sg);margin-top:.15rem;font-weight:500">↑ +22% YoY</div>
+                  <div style="font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:700;color:var(--cxg);line-height:1">-41%</div>
+                  <div style="font-size:.5rem;letter-spacing:.07em;text-transform:uppercase;color:var(--slate);margin-top:.12rem">Avg CAC</div>
+                  <div style="font-size:.54rem;color:var(--cxg-sg);margin-top:.15rem;font-weight:500">€14.20 → €8.40</div>
                 </div>
                 <div style="background:white;border:1px solid var(--cxg-mist);border-radius:4px;padding:.55rem .65rem">
-                  <div style="font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:700;color:var(--cxg);line-height:1">97%</div>
-                  <div style="font-size:.5rem;letter-spacing:.07em;text-transform:uppercase;color:var(--slate);margin-top:.12rem">Profile completion</div>
-                  <div style="font-size:.54rem;color:var(--cxg-sg);margin-top:.15rem;font-weight:500">post-redesign baseline</div>
+                  <div style="font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:700;color:var(--cxg);line-height:1">€120K</div>
+                  <div style="font-size:.5rem;letter-spacing:.07em;text-transform:uppercase;color:var(--slate);margin-top:.12rem">Reallocated</div>
+                  <div style="font-size:.54rem;color:var(--cxg-sg);margin-top:.15rem;font-weight:500">low → high ROAS</div>
                 </div>
               </div>
               <div style="display:grid;grid-template-columns:1.3fr 1fr;gap:.65rem">
-                <!-- Channel ROI table -->
+                <!-- Channel allocation table with ROAS + Decision -->
                 <div style="background:white;border:1px solid var(--cxg-mist);border-radius:4px;padding:.65rem .8rem">
-                  <div style="font-size:.52rem;letter-spacing:.1em;text-transform:uppercase;color:var(--slate);margin-bottom:.55rem">Channel performance · conversion & cost</div>
+                  <div style="font-size:.52rem;letter-spacing:.1em;text-transform:uppercase;color:var(--slate);margin-bottom:.55rem">Channel allocation · CAC · ROAS · decision</div>
                   <table style="width:100%;border-collapse:collapse;font-size:.56rem">
-                    <thead><tr style="border-bottom:1px solid var(--cxg-mist)"><th style="text-align:left;padding:.22rem .35rem;color:var(--slate);font-weight:400;font-size:.5rem;letter-spacing:.06em;text-transform:uppercase">Channel</th><th style="text-align:right;padding:.22rem .35rem;color:var(--slate);font-weight:400;font-size:.5rem;letter-spacing:.06em;text-transform:uppercase">Applicants</th><th style="text-align:right;padding:.22rem .35rem;color:var(--slate);font-weight:400;font-size:.5rem;letter-spacing:.06em;text-transform:uppercase">Conv.</th><th style="text-align:right;padding:.22rem .35rem;color:var(--slate);font-weight:400;font-size:.5rem;letter-spacing:.06em;text-transform:uppercase">Cost/act.</th></tr></thead>
+                    <thead><tr style="border-bottom:1px solid var(--cxg-mist)"><th style="text-align:left;padding:.18rem .3rem;color:var(--slate);font-weight:400;font-size:.48rem;letter-spacing:.06em;text-transform:uppercase">Channel</th><th style="text-align:right;padding:.18rem .3rem;color:var(--slate);font-weight:400;font-size:.48rem;letter-spacing:.06em;text-transform:uppercase">Budget</th><th style="text-align:right;padding:.18rem .3rem;color:var(--slate);font-weight:400;font-size:.48rem;letter-spacing:.06em;text-transform:uppercase">CAC</th><th style="text-align:right;padding:.18rem .3rem;color:var(--slate);font-weight:400;font-size:.48rem;letter-spacing:.06em;text-transform:uppercase">ROAS</th><th style="text-align:right;padding:.18rem .3rem;color:var(--slate);font-weight:400;font-size:.48rem;letter-spacing:.06em;text-transform:uppercase">Decision</th></tr></thead>
                     <tbody>
-                      <tr style="border-bottom:1px solid var(--cxg-mist)"><td style="padding:.28rem .35rem;color:var(--graphite)">Direct Recruit</td><td style="text-align:right;padding:.28rem .35rem;color:var(--slate)">4,820</td><td style="text-align:right;padding:.28rem .35rem;color:var(--cxg-sg);font-weight:500">46%</td><td style="text-align:right;padding:.28rem .35rem;color:var(--cxg-sg);font-weight:500">$4.20</td></tr>
-                      <tr style="border-bottom:1px solid var(--cxg-mist)"><td style="padding:.28rem .35rem;color:var(--graphite)">Referral</td><td style="text-align:right;padding:.28rem .35rem;color:var(--slate)">2,140</td><td style="text-align:right;padding:.28rem .35rem;color:var(--cxg-sg);font-weight:500">38%</td><td style="text-align:right;padding:.28rem .35rem;color:var(--cxg-sg);font-weight:500">$6.80</td></tr>
-                      <tr style="border-bottom:1px solid var(--cxg-mist)"><td style="padding:.28rem .35rem;color:var(--graphite)">Organic / Job posts</td><td style="text-align:right;padding:.28rem .35rem;color:var(--slate)">3,280</td><td style="text-align:right;padding:.28rem .35rem;color:var(--cxg-or);font-weight:500">28%</td><td style="text-align:right;padding:.28rem .35rem;color:var(--cxg-or);font-weight:500">$9.40</td></tr>
-                      <tr style="border-bottom:1px solid var(--cxg-mist)"><td style="padding:.28rem .35rem;color:var(--graphite)">Paid Social</td><td style="text-align:right;padding:.28rem .35rem;color:var(--slate)">1,650</td><td style="text-align:right;padding:.28rem .35rem;color:var(--cxg-rd);font-weight:500">18%</td><td style="text-align:right;padding:.28rem .35rem;color:var(--cxg-rd);font-weight:500">$18.60</td></tr>
-                      <tr><td style="padding:.28rem .35rem;color:var(--graphite)">Partner Networks</td><td style="text-align:right;padding:.28rem .35rem;color:var(--slate)">590</td><td style="text-align:right;padding:.28rem .35rem;color:var(--cxg-rd);font-weight:500">12%</td><td style="text-align:right;padding:.28rem .35rem;color:var(--cxg-rd);font-weight:500">$24.10</td></tr>
+                      <tr style="border-bottom:1px solid var(--cxg-mist)"><td style="padding:.24rem .3rem;color:var(--graphite)">Direct Recruit</td><td style="text-align:right;padding:.24rem .3rem;color:var(--slate)">€95K</td><td style="text-align:right;padding:.24rem .3rem;color:var(--cxg-sg);font-weight:500">€4.20</td><td style="text-align:right;padding:.24rem .3rem;color:var(--cxg-sg);font-weight:500">5.1×</td><td style="text-align:right;padding:.24rem .3rem"><span style="background:rgba(86,166,134,.15);color:var(--cxg-sg);font-size:.46rem;padding:.08rem .28rem;border-radius:20px;font-weight:600;white-space:nowrap">SCALE ↑</span></td></tr>
+                      <tr style="border-bottom:1px solid var(--cxg-mist)"><td style="padding:.24rem .3rem;color:var(--graphite)">Referral</td><td style="text-align:right;padding:.24rem .3rem;color:var(--slate)">€45K</td><td style="text-align:right;padding:.24rem .3rem;color:var(--cxg-sg);font-weight:500">€6.80</td><td style="text-align:right;padding:.24rem .3rem;color:var(--cxg-sg);font-weight:500">3.2×</td><td style="text-align:right;padding:.24rem .3rem"><span style="background:rgba(86,166,134,.15);color:var(--cxg-sg);font-size:.46rem;padding:.08rem .28rem;border-radius:20px;font-weight:600;white-space:nowrap">SCALE ↑</span></td></tr>
+                      <tr style="border-bottom:1px solid var(--cxg-mist)"><td style="padding:.24rem .3rem;color:var(--graphite)">Organic / SEO</td><td style="text-align:right;padding:.24rem .3rem;color:var(--slate)">€55K</td><td style="text-align:right;padding:.24rem .3rem;color:var(--cxg-or);font-weight:500">€9.40</td><td style="text-align:right;padding:.24rem .3rem;color:var(--cxg-or);font-weight:500">2.3×</td><td style="text-align:right;padding:.24rem .3rem"><span style="background:rgba(187,97,37,.12);color:var(--cxg-or);font-size:.46rem;padding:.08rem .28rem;border-radius:20px;font-weight:600;white-space:nowrap">HOLD →</span></td></tr>
+                      <tr style="border-bottom:1px solid var(--cxg-mist)"><td style="padding:.24rem .3rem;color:var(--graphite)">SEA / Job boards</td><td style="text-align:right;padding:.24rem .3rem;color:var(--slate)">€60K</td><td style="text-align:right;padding:.24rem .3rem;color:var(--cxg-or);font-weight:500">€12.60</td><td style="text-align:right;padding:.24rem .3rem;color:var(--cxg-or);font-weight:500">1.7×</td><td style="text-align:right;padding:.24rem .3rem"><span style="background:rgba(187,97,37,.12);color:var(--cxg-or);font-size:.46rem;padding:.08rem .28rem;border-radius:20px;font-weight:600;white-space:nowrap">REDUCE ↓</span></td></tr>
+                      <tr><td style="padding:.24rem .3rem;color:var(--graphite)">Paid Social <span style="font-size:.44rem;color:var(--cxg-rd)">↓ from €90K</span></td><td style="text-align:right;padding:.24rem .3rem;color:var(--slate)">€30K</td><td style="text-align:right;padding:.24rem .3rem;color:var(--cxg-rd);font-weight:500">€18.60</td><td style="text-align:right;padding:.24rem .3rem;color:var(--cxg-rd);font-weight:500">1.2×</td><td style="text-align:right;padding:.24rem .3rem"><span style="background:rgba(193,68,86,.12);color:var(--cxg-rd);font-size:.46rem;padding:.08rem .28rem;border-radius:20px;font-weight:600;white-space:nowrap">CUT ✕</span></td></tr>
                     </tbody>
                   </table>
-                  <div style="margin-top:.55rem;padding-top:.45rem;border-top:1px solid var(--cxg-mist);font-size:.5rem;color:var(--slate)">Korea: 97% conversion · SEA: 18% → 36% · Dedicated resource = 2–3× uplift</div>
                 </div>
-                <!-- Conversion trend -->
+                <!-- Budget shift H1 → H2 + decision callout -->
                 <div style="background:white;border:1px solid var(--cxg-mist);border-radius:4px;padding:.65rem .8rem">
-                  <div style="font-size:.52rem;letter-spacing:.1em;text-transform:uppercase;color:var(--slate);margin-bottom:.42rem">Conversion rate trend (%)</div>
-                  <div style="display:flex;align-items:flex-end;gap:.28rem;height:60px;margin-bottom:.22rem">
-                    <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:.08rem">
-                      <div style="font-size:.44rem;color:var(--slate)">27</div>
-                      <div style="width:100%;border-radius:2px 2px 0 0;background:rgba(0,60,76,.18);height:37%"></div>
+                  <div style="font-size:.52rem;letter-spacing:.1em;text-transform:uppercase;color:var(--slate);margin-bottom:.5rem">Budget shift · H1 → H2</div>
+                  <div style="display:flex;flex-direction:column;gap:.32rem;margin-bottom:.65rem">
+                    <div>
+                      <div style="font-size:.5rem;color:var(--graphite);margin-bottom:.1rem">Direct Recruit</div>
+                      <div style="display:flex;align-items:center;gap:.3rem;margin-bottom:.08rem"><span style="font-size:.44rem;color:var(--slate);width:14px">H1</span><div style="flex:1;height:6px;background:var(--fog);border-radius:20px;overflow:hidden"><div style="height:100%;border-radius:20px;background:rgba(0,60,76,.2);width:68%"></div></div><span style="font-size:.44rem;color:var(--slate);width:26px;text-align:right">€65K</span></div>
+                      <div style="display:flex;align-items:center;gap:.3rem"><span style="font-size:.44rem;color:var(--cxg-sg);font-weight:600;width:14px">H2</span><div style="flex:1;height:6px;background:var(--fog);border-radius:20px;overflow:hidden"><div style="height:100%;border-radius:20px;background:var(--cxg-sg);width:100%"></div></div><span style="font-size:.44rem;color:var(--cxg-sg);font-weight:600;width:26px;text-align:right">€95K</span></div>
                     </div>
-                    <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:.08rem">
-                      <div style="font-size:.44rem;color:var(--slate)">30</div>
-                      <div style="width:100%;border-radius:2px 2px 0 0;background:rgba(0,60,76,.26);height:43%"></div>
+                    <div>
+                      <div style="font-size:.5rem;color:var(--graphite);margin-bottom:.1rem">Referral</div>
+                      <div style="display:flex;align-items:center;gap:.3rem;margin-bottom:.08rem"><span style="font-size:.44rem;color:var(--slate);width:14px">H1</span><div style="flex:1;height:6px;background:var(--fog);border-radius:20px;overflow:hidden"><div style="height:100%;border-radius:20px;background:rgba(0,60,76,.2);width:37%"></div></div><span style="font-size:.44rem;color:var(--slate);width:26px;text-align:right">€35K</span></div>
+                      <div style="display:flex;align-items:center;gap:.3rem"><span style="font-size:.44rem;color:var(--cxg-sg);font-weight:600;width:14px">H2</span><div style="flex:1;height:6px;background:var(--fog);border-radius:20px;overflow:hidden"><div style="height:100%;border-radius:20px;background:var(--cxg-sg);width:47%"></div></div><span style="font-size:.44rem;color:var(--cxg-sg);font-weight:600;width:26px;text-align:right">€45K</span></div>
                     </div>
-                    <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:.08rem">
-                      <div style="font-size:.44rem;color:var(--slate)">33</div>
-                      <div style="width:100%;border-radius:2px 2px 0 0;background:rgba(0,60,76,.34);height:50%"></div>
-                    </div>
-                    <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:.08rem">
-                      <div style="font-size:.44rem;color:var(--slate)">36</div>
-                      <div style="width:100%;border-radius:2px 2px 0 0;background:rgba(0,60,76,.44);height:57%"></div>
-                    </div>
-                    <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:.08rem">
-                      <div style="font-size:.44rem;color:var(--slate)">39</div>
-                      <div style="width:100%;border-radius:2px 2px 0 0;background:rgba(0,60,76,.54);height:65%"></div>
-                    </div>
-                    <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:.08rem">
-                      <div style="font-size:.44rem;color:var(--slate)">42</div>
-                      <div style="width:100%;border-radius:2px 2px 0 0;background:rgba(0,60,76,.66);height:76%"></div>
-                    </div>
-                    <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:.08rem">
-                      <div style="font-size:.44rem;color:var(--slate)">44</div>
-                      <div style="width:100%;border-radius:2px 2px 0 0;background:rgba(0,60,76,.8);height:86%"></div>
-                    </div>
-                    <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:.08rem">
-                      <div style="font-size:.44rem;color:var(--cxg);font-weight:600">46</div>
-                      <div style="width:100%;border-radius:2px 2px 0 0;background:var(--cxg);height:100%"></div>
+                    <div>
+                      <div style="font-size:.5rem;color:var(--graphite);margin-bottom:.1rem">Paid Social</div>
+                      <div style="display:flex;align-items:center;gap:.3rem;margin-bottom:.08rem"><span style="font-size:.44rem;color:var(--slate);width:14px">H1</span><div style="flex:1;height:6px;background:var(--fog);border-radius:20px;overflow:hidden"><div style="height:100%;border-radius:20px;background:rgba(0,60,76,.2);width:95%"></div></div><span style="font-size:.44rem;color:var(--slate);width:26px;text-align:right">€90K</span></div>
+                      <div style="display:flex;align-items:center;gap:.3rem"><span style="font-size:.44rem;color:var(--cxg-rd);font-weight:600;width:14px">H2</span><div style="flex:1;height:6px;background:var(--fog);border-radius:20px;overflow:hidden"><div style="height:100%;border-radius:20px;background:var(--cxg-rd);width:32%"></div></div><span style="font-size:.44rem;color:var(--cxg-rd);font-weight:600;width:26px;text-align:right">€30K</span></div>
                     </div>
                   </div>
-                  <div style="display:flex;justify-content:space-between;font-size:.46rem;color:var(--slate)"><span>Q1'24</span><span>Q2</span><span>Q3</span><span>Q4</span><span>Q1'25</span><span>Q2</span><span>Q3</span><span>Q4</span></div>
-                  <div style="margin-top:.65rem;font-size:.52rem;letter-spacing:.1em;text-transform:uppercase;color:var(--slate);margin-bottom:.4rem">Top performing markets</div>
-                  <div style="display:flex;align-items:center;justify-content:space-between;padding:.22rem 0;border-bottom:1px solid var(--cxg-mist);font-size:.58rem"><span style="color:var(--graphite)">Korea</span><span style="color:var(--cxg-sg);font-weight:600">97%</span></div>
-                  <div style="display:flex;align-items:center;justify-content:space-between;padding:.22rem 0;border-bottom:1px solid var(--cxg-mist);font-size:.58rem"><span style="color:var(--graphite)">SEA</span><span style="color:var(--cxg-sg);font-weight:600">36% <span style="font-size:.48rem;font-weight:400;color:var(--slate)">↑ from 18%</span></span></div>
-                  <div style="display:flex;align-items:center;justify-content:space-between;padding:.22rem 0;font-size:.58rem"><span style="color:var(--graphite)">EU-FR</span><span style="color:var(--cxg-or);font-weight:600">41%</span></div>
+                  <div style="background:rgba(0,60,76,.05);border-left:2px solid var(--cxg-tl);border-radius:0 4px 4px 0;padding:.5rem .6rem">
+                    <div style="font-size:.5rem;color:var(--cxg);font-weight:600;margin-bottom:.2rem">Decision: Paid Social</div>
+                    <div style="font-size:.5rem;color:var(--graphite);line-height:1.55">CAC 4.4× above Direct Recruit. Cut €60K, redirected to outreach + referral. Blended ROAS improved 1.4× → 3.2× over 18 months.</div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -1334,6 +1311,7 @@ h2{font-size:clamp(1.85rem,3.2vw,2.75rem)!important;line-height:1.08!important}
             <div class="c-lbl" id="g-lbl" style="color:rgba(255,255,255,.5)">Database <b style="color:var(--cxg-tl)">Health</b></div>
           </div>
         </div>
+        <p class="cxg-note">Data is proprietary. Figures are illustrative; the dashboard architecture, acquisition logic, and operating structure are real.</p>
     </div>
   </div>
 </section>
@@ -1345,7 +1323,7 @@ h2{font-size:clamp(1.85rem,3.2vw,2.75rem)!important;line-height:1.08!important}
       <div style="font-size:.58rem;letter-spacing:.22em;text-transform:uppercase;color:var(--burgundy);display:flex;align-items:center;gap:.5rem"><span style="display:block;width:1.1rem;height:1px;background:var(--burgundy)"></span>Reference</div>
     </div>
     <div>
-      <p style="font-family:'Playfair Display',serif;font-style:italic;font-size:1.15rem;color:var(--graphite);line-height:1.7;margin-bottom:1.1rem">"In the years working together, Alexandra built a department from the ground up, launched new tools, processes and so much more. Not about quick fixes, but about finding the root cause of anything coming her way, she is an avid learner who has always challenged the status quo and taken matters into her own hands."</p>
+      <p style="font-family:'Playfair Display',serif;font-style:italic;font-size:1.15rem;color:var(--graphite);line-height:1.7;margin-bottom:1.1rem">"Alexandra built a department from the ground up, launched new tools and processes, and consistently challenged the status quo. She was not about quick fixes, but about finding the root cause and taking ownership."</p>
       <div style="font-size:.72rem;color:var(--slate);letter-spacing:.04em">Marine Debatte K. · EVP Community Engagement, CXG · Line Manager 2021–2026</div>
     </div>
   </div>
@@ -1360,7 +1338,7 @@ h2{font-size:clamp(1.85rem,3.2vw,2.75rem)!important;line-height:1.08!important}
 <!-- 03 ECOCONNECT -->
 <section class="section" id="eco" style="background-color:rgb(248,247,245)">
   <div class="si">
-    <div class="s-head"><div><div class="s-ey"><span class="s-idx">02 /</span> 2024–2025 · Founder, Strategy</div><h2 style="color:rgb(42,107,60)">EcoConnect - <em style="color:var(--eco-lt)">supply-side marketplace<br>infrastructure</em></h2></div></div>
+    <div class="s-head"><div><div class="s-ey"><span class="s-idx">02 /</span> 2024–2025 · Founder, Strategy</div><h2 style="color:rgb(42,107,60)">EcoConnect &mdash; <em style="color:var(--eco-lt)">certified supply-side<br>infrastructure</em></h2></div></div>
     <!-- ECO PHOTO CAROUSEL -->
     <div class="eco-pc" style="margin-bottom:2.5rem">
       <div class="eco-pc-track">
@@ -1384,9 +1362,9 @@ h2{font-size:clamp(1.85rem,3.2vw,2.75rem)!important;line-height:1.08!important}
     <!-- ECO TEXT BELOW -->
     <div class="eco-bottom">
       <div class="eco-copy">
-  <p>Brands knew how their sales associates performed at point of sale but had almost no visibility upstream — certifications lived in PDFs and supplier problems surfaced reactively, already public.</p>
-  <p>Built to close that gap: supplier discovery, certification verification, RFP workflows, and contract tracking in one stack, with a verified base of 4,186 supplier profiles.</p>
-  <p>The same platform-growth problem I had been solving at CXG in a different market: build trustable supply before demand can scale.</p>
+  <p>Brands knew how their sales associates performed at point of sale, but had almost no visibility upstream: certifications lived in PDFs and supplier problems surfaced only once they were already public.</p>
+  <p>Built to close that gap: supplier discovery, certification verification, RFP workflows, and contract tracking in one stack, with 4,186 verified supplier profiles at launch.</p>
+  <p>The same platform-growth problem I had solved at CXG in a different market: build trusted supply before demand can scale.</p>
 </div>
 <div class="eco-right">
         <div class="eco-award">
@@ -1400,7 +1378,7 @@ h2{font-size:clamp(1.85rem,3.2vw,2.75rem)!important;line-height:1.08!important}
               <div class="eco-award-year">Dubai · 2025</div>
             </div>
           </div>
-          <p class="eco-award-desc">Beat ventures backed by $1M+ in government contracts — bootstrapped while working full-time at CXG and completing a dual EMBA. No dedicated time. No external funding.</p>
+          <p class="eco-award-desc">Beat ventures backed by $1M+ in government contracts, while bootstrapped during a full-time CXG role and dual EMBA. No dedicated time. No external funding.</p>
         </div>
         <div class="eco-facts">
           <div class="eco-fact">
@@ -1422,7 +1400,7 @@ h2{font-size:clamp(1.85rem,3.2vw,2.75rem)!important;line-height:1.08!important}
 <!-- 04 AUDACITY -->
 <section class="section" id="aud">
   <div class="si">
-    <div class="s-head"><div><div class="s-ey"><span class="s-idx">03 /</span> 2026 · Founder &amp; Builder</div><h2>Audacity - <em>AI-assisted operating<br>system</em></h2></div></div>
+    <div class="s-head"><div><div class="s-ey"><span class="s-idx">03 /</span> 2026 · Founder &amp; Builder</div><h2>Audacity &mdash; <em>AI-assisted operating<br>platform</em></h2></div></div>
     <div>
               <div class="carousel">
           <div class="c-bar"><div class="cdot"></div><div class="cdot"></div><div class="cdot"></div><div class="curl" id="a-url">Consumer Registration</div></div>
@@ -1454,7 +1432,7 @@ h2{font-size:clamp(1.85rem,3.2vw,2.75rem)!important;line-height:1.08!important}
                 <div class="ops-bar"><div class="ops-logo">AUD<b>A</b>CITY Ops</div><span style="font-size:.54rem;color:rgba(255,255,255,.2)">ops.html#assign</span></div>
                 <div class="otabs"><div class="otab">Create</div><div class="otab on">Assign</div><div class="otab">Review</div><div class="otab">Analyze</div><div class="otab">Pay</div></div>
                 <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:4px;padding:.55rem .7rem;margin-bottom:.6rem">
-                  <div style="font-size:.62rem;color:rgba(255,255,255,.55);font-weight:500;margin-bottom:.2rem">Maison Delvaux , Paris 8e · Boutique Visit</div>
+                  <div style="font-size:.62rem;color:rgba(255,255,255,.55);font-weight:500;margin-bottom:.2rem">Maison Delvaux, Paris 8e · Boutique Visit</div>
                   <div style="display:flex;gap:1.2rem;font-size:.56rem;color:rgba(255,255,255,.3)"><span>Window: 14–21 Apr 2026</span><span>Compensation: €150</span><span>Focus: Arrival, Consultation, Farewell</span></div>
                 </div>
                 <div class="acard"><div><div class="ac-n">Sophie Laurent <span class="abg vic">VIC</span></div><div class="ac-s">LC-00014 · Fine Jewelry, Couture, Watches · Paris · 4 missions completed</div></div><div class="acta"><button class="abtn">View</button><button class="abtn p">Select</button></div></div>
@@ -1466,17 +1444,17 @@ h2{font-size:clamp(1.85rem,3.2vw,2.75rem)!important;line-height:1.08!important}
             <div class="c-screen" id="as-2">
               <div class="as-pad">
                 <div class="ops-bar"><div class="ops-logo">AUD<b>A</b>CITY Ops</div><span style="font-size:.54rem;color:rgba(255,255,255,.2)">ops.html#review</span></div>
-                <div style="display:flex;align-items:center;justify-content:space-between;margin:.2rem 0 .4rem"><div style="font-size:.7rem;color:rgba(255,255,255,.65)">Maison Delvaux , Paris 8e · SHOPPER-3A1F02</div><span style="font-size:.54rem;padding:.1rem .4rem;background:rgba(42,107,60,.3);color:#70c485;border-radius:3px">✓ Validated</span></div>
+                <div style="display:flex;align-items:center;justify-content:space-between;margin:.2rem 0 .4rem"><div style="font-size:.7rem;color:rgba(255,255,255,.65)">Maison Delvaux, Paris 8e · SHOPPER-3A1F02</div><span style="font-size:.54rem;padding:.1rem .4rem;background:rgba(42,107,60,.3);color:#70c485;border-radius:3px">✓ Validated</span></div>
                 <div style="font-size:.56rem;color:rgba(255,255,255,.26);margin-bottom:.45rem">Visit: 14 Apr 2026, 14:32 · Validated: 16 Apr 2026 · Duration: 34 min</div>
                 <div class="sg"><div class="sc tot"><div class="sc-n">8.4</div><div class="sc-l">Overall</div></div><div class="sc"><div class="sc-n">9</div><div class="sc-l">Arrival</div></div><div class="sc"><div class="sc-n">8</div><div class="sc-l">Consult.</div></div><div class="sc"><div class="sc-n">10</div><div class="sc-l">Presentn.</div></div><div class="sc"><div class="sc-n">7.5</div><div class="sc-l">Environ.</div></div><div class="sc"><div class="sc-n">8</div><div class="sc-l">Farewell</div></div></div>
                 <div style="display:flex;gap:.3rem;margin:.3rem 0"><span style="font-size:.5rem;padding:.1rem .4rem;background:rgba(255,255,255,.06);border-radius:3px;color:rgba(255,255,255,.4)">↑ +0.4 vs campaign avg</span><span style="font-size:.5rem;padding:.1rem .4rem;background:rgba(255,255,255,.06);border-radius:3px;color:rgba(255,255,255,.4)">↑ +0.6 vs location avg</span></div>
-                <div class="rnote">"SA approached immediately upon entry. Product knowledge was exceptional , she anticipated questions before they were asked. The wrapping presentation was flawless. Farewell felt rushed and lacked the ceremonial quality expected at this tier."</div>
+                <div class="rnote">"SA approached immediately upon entry. Product knowledge was exceptional; she anticipated questions before they were asked. The wrapping presentation was flawless. Farewell felt rushed and lacked the ceremonial quality expected at this tier."</div>
               </div>
             </div>
             <!-- S4: Rich Brand Portal -->
             <div class="c-screen" id="as-3">
               <div class="as-pad">
-                <div class="bbar-top"><div class="bbar-n">Maison Delvaux , Brand Portal</div><div style="display:flex;gap:.3rem;font-size:.54rem"><span style="color:rgba(255,255,255,.3);background:rgba(255,255,255,.06);padding:.12rem .4rem;border-radius:3px">Q2 2026</span><span style="color:rgba(255,255,255,.3);background:rgba(255,255,255,.06);padding:.12rem .4rem;border-radius:3px">All locations</span></div></div>
+                <div class="bbar-top"><div class="bbar-n">Maison Delvaux, Brand Portal</div><div style="display:flex;gap:.3rem;font-size:.54rem"><span style="color:rgba(255,255,255,.3);background:rgba(255,255,255,.06);padding:.12rem .4rem;border-radius:3px">Q2 2026</span><span style="color:rgba(255,255,255,.3);background:rgba(255,255,255,.06);padding:.12rem .4rem;border-radius:3px">All locations</span></div></div>
                 <div class="bkpis">
                   <div class="bkpi"><div class="bkpi-n">8.4</div><div class="bkpi-l">Avg score</div><div class="bkpi-d bg-up">↑ +0.3 vs Q1</div></div>
                   <div class="bkpi"><div class="bkpi-n">12</div><div class="bkpi-l">Visits Q2</div><div class="bkpi-d bg-up">4 validated</div></div>
@@ -1521,10 +1499,9 @@ h2{font-size:clamp(1.85rem,3.2vw,2.75rem)!important;line-height:1.08!important}
           <a class="proj-link" href="https://alexandra-kan.github.io/audacity/" target="_blank" style="margin-top:0;white-space:nowrap">View platform site</a>
         </div>
         <div style="max-width:720px;margin:2.5rem auto 0">
-          <p style="font-size:.95rem;color:var(--graphite);line-height:1.88">Clean onboarding, matched missions, validated reporting, fast payment — trust through the experience, not the promise. Built without an engineering team, using AI-assisted development and automation: three live interfaces, 16 endpoints, evaluator onboarding, mission matching, report validation, and payment. The point was not to become an engineer; it was to turn a market insight into a working operating system quickly.</p>
+          <p style="font-size:.95rem;color:var(--graphite);line-height:1.88">Clean onboarding, matched missions, validated reporting, fast payment: trust through the experience, not the promise. Built without an engineering team, using AI-assisted development and automation: three live interfaces, 16 endpoints, evaluator onboarding, mission matching, report validation, and payment. The point was not to become an engineer; it was to turn a market insight into a working operating system quickly.</p>
         </div>
 
-    </div>      </div>
     </div>
   </div>
 </section>
@@ -1554,7 +1531,7 @@ at=setInterval(()=>goA((ac+1)%4),4800);
 const es=document.querySelectorAll('#es-0,#es-1,#es-2,#es-3');
 const ed=document.querySelectorAll('#eco .pdot');
 const euEl=document.getElementById('e-url'),elEl=document.getElementById('e-lbl');
-const eD=[{u:'app.ecoconnect-app.com , Search',l:'Platform <b style="color:var(--eco-lt)">Search</b>'},{u:'app.ecoconnect-app.com , Dashboard',l:'Buyer <b style="color:var(--eco-lt)">Dashboard</b>'},{u:'app.ecoconnect-app.com , Suppliers',l:'Supplier <b style="color:var(--eco-lt)">Discovery</b>'},{u:'app.ecoconnect-app.com , Contracts',l:'Contract <b style="color:var(--eco-lt)">Management</b>'}];
+const eD=[{u:'app.ecoconnect-app.com · Search',l:'Platform <b style="color:var(--eco-lt)">Search</b>'},{u:'app.ecoconnect-app.com · Dashboard',l:'Buyer <b style="color:var(--eco-lt)">Dashboard</b>'},{u:'app.ecoconnect-app.com · Suppliers',l:'Supplier <b style="color:var(--eco-lt)">Discovery</b>'},{u:'app.ecoconnect-app.com · Contracts',l:'Contract <b style="color:var(--eco-lt)">Management</b>'}];
 let ec=0,et;
 function goE(n){es[ec].classList.remove('active');es[ec].classList.add('leaving');const o=ec;setTimeout(()=>es[o].classList.remove('leaving'),520);ed[ec].classList.remove('on');ec=n;es[ec].classList.add('active');ed[ec].classList.add('on');if(euEl)euEl.textContent=eD[ec].u;if(elEl)elEl.innerHTML=eD[ec].l;clearInterval(et);et=setInterval(()=>goE((ec+1)%4),5200);}
 et=setInterval(()=>goE((ec+1)%4),5200);
@@ -1565,7 +1542,7 @@ const gd=document.querySelectorAll('#ge .pdot');
 const guEl=document.getElementById('g-url'),glEl=document.getElementById('g-lbl');
 const gD=[
   {u:'G&E Intelligence · Database Health',l:'Database <b style="color:var(--cxg-tl)">Health</b>'},
-  {u:'G&E Intelligence · Channel Effectiveness',l:'Channel <b style="color:var(--cxg-tl)">Effectiveness</b>'},
+  {u:'G&E Intelligence · Budget & Acquisition ROI',l:'Budget & <b style="color:var(--cxg-tl)">Acquisition ROI</b>'},
 ];
 let gc=0,gt;
 function goG(n){gs[gc].classList.remove('active');gs[gc].classList.add('leaving');const o=gc;setTimeout(()=>gs[o].classList.remove('leaving'),520);gd[gc].classList.remove('on');gc=n;gs[gc].classList.add('active');gd[gc].classList.add('on');if(guEl)guEl.textContent=gD[gc].u;if(glEl)glEl.innerHTML=gD[gc].l;clearInterval(gt);gt=setInterval(()=>goG((gc+1)%2),5800);}
