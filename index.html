@@ -60,11 +60,14 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:1rem 4%;display:flex
   background-size:76px 76px;
   pointer-events:none;z-index:0;
 }
-.hero::after{
-  content:'AUDACITY';position:absolute;right:-.12em;bottom:.06em;
-  font-family:'Impact','Arial Black',sans-serif;font-size:clamp(5rem,18vw,18rem);
-  letter-spacing:.06em;color:rgba(255,255,255,.025);line-height:.8;z-index:0;pointer-events:none;
+.hero::after{content:''}
+.hero-audacity{
+  position:absolute;right:4%;bottom:.06em;
+  font-family:'Impact','Arial Black',sans-serif;font-size:clamp(4rem,10vw,12rem);
+  letter-spacing:.06em;color:rgba(255,255,255,.025);line-height:.8;
+  z-index:0;pointer-events:none;user-select:none;
 }
+.hero-aud-a2{color:rgba(122,31,46,.4)}
 .hero-main{
   display:flex;flex-direction:column;justify-content:center;
   padding:9rem 4% 2rem;position:relative;z-index:1;
@@ -977,6 +980,7 @@ h2{font-size:clamp(1.85rem,3.2vw,2.75rem)!important;line-height:1.08!important}
 
 <!-- HERO -->
 <section class="hero" data-variant="2">
+  <div class="hero-audacity" aria-hidden="true">AUD<span class="hero-aud-a2">A</span>CITY</div>
   <div class="hero-main">
     <div class="hero-inner">
       <div class="hero-pre a1">GTM, Growth & Operations · Paris · 2026</div>
@@ -1094,7 +1098,7 @@ h2{font-size:clamp(1.85rem,3.2vw,2.75rem)!important;line-height:1.08!important}
 
 <section class="case-intro" aria-label="CXG flagship case introduction">
   <div class="case-kicker">CXG · business transformation + verified growth</div>
-  <h3>CXG: two functions built from scratch</h3>
+  <h2>CXG: two functions built from scratch</h2>
   <p>At CXG, I built functions where the business had outgrown informal systems. Business Transformation created commercial visibility, forecasting discipline, and operating control across 11 business units. Growth & Engagement scaled the verified supply-side network the platform depended on. The through-line was the same: identify the constraint, build the structure, establish the cadence, and turn it into a repeatable operating engine.</p>
 </section>
 
